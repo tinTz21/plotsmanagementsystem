@@ -61,3 +61,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
+Route::get('plot','PlotController@index')->name('plot');
+Route::get('create-plot','PlotController@create')->name('create-plot');
