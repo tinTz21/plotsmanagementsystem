@@ -70,26 +70,21 @@
                 </a>
               </li>
               <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-laravel" target="_blank" class="btn btn-primary btn-block">Anything</a>
+                <a href="hl" target="_blank" class="btn btn-primary btn-block">Anything</a>
               </li>
-              <!-- <li class="header-title">Want more components?</li>
-                  <li class="button-container">
-                      <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
-                        Get the pro version
-                      </a>
-                  </li> -->
+           
               <li class="button-container">
-                <a href="https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html" target="_blank" class="btn btn-default btn-block">
+                <a href="#" target="_blank" class="btn btn-default btn-block">
                   Augutino
                 </a>
               </li>
               <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
+                <a href="#" target="_blank" class="btn btn-danger btn-block btn-round">
                   Aliko Profile
                 </a>
               </li>
               <li class="button-container github-star">
-                <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                <a class="github-button" href="#" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
               </li>
               <li class="header-title">Vie my media</li>
               <li class="button-container text-center">

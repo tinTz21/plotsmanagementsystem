@@ -8,7 +8,7 @@
   			<div class="row">
   		<div class="col-md-6"></div>
   		<div class="col-md-6 text-right ">
-  			<a href="{{route('create-plot')}}" class="btn btn-primary">Register Land</a>
+  			<a href="{{route('create-plot')}}" class="btn btn-primary">Add New Land</a>
   		</div>	
   	</div>
   		</div>
@@ -58,7 +58,7 @@
 		          </div>
 
 		            <div class="form-group" style="color: red">
-					    <label for="exampleFormControlFile1">Example file input</label>
+					    <label for="exampleFormControlFile1">ile input</label>
 					    <input type="file" class="form-control-file text-danger" id="exampleFormControlFile1">
 					  </div>
 
@@ -76,12 +76,35 @@
   	</div>
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">Material Dashboard Heading</h4>
-        <p class="card-category">Created using Roboto Font Family</p>
+        <h4 class="card-title">MyLands</h4>
+        <p class="card-category">This is list of registered plots</p>
       </div>
-      <div class="card-body">
-      	I can have anything I want here
-      </div>
+    </div>
+   
+    	<div class="row">
+    @foreach($plot as $plot)
+    		<div class="col-md-6">
+    			<div class="card text-center" >
+    				 <a href="{{url('plot/show',$plot->id)}}">
+		    		<div class="card-header card-header-info"> {{$plot->region}}&nbsp;&nbsp;&nbsp;{{$plot->district}} &nbsp;&nbsp;&nbsp; {{$plot->street}}</div>
+		    		<div class="card-body">
+		    		<h5>Plot Description</h5>
+		    		{{$plot->description}}
+		    		</div>
+		    		<div class="card-footer border-top border-info">
+		    			<div class="row">
+		    				<div class="col-md-6">
+		    					Created At: {{$plot->created_at}}
+		    				</div>
+		    				<div class="col-md-6 ">
+		    					Block Number:{{$plot->block_number}}
+		    				</div>
+		    			</div>
+		    		</div>
+		    		</a>
+		    	</div>
+    		</div>
+    @endforeach
     </div>
   </div>
 </div>

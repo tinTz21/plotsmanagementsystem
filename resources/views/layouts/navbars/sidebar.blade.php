@@ -6,7 +6,7 @@
   -->
   <div class="logo">
     <a href="/home" class="simple-text logo-normal">
-      {{ __('My Lands') }}
+      {{ __('MyLands') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -21,7 +21,7 @@
    <li class="nav-item{{ $activePage == 'map' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('plot') }}">
           <i class="material-icons">location_ons</i>
-            <p>{{ __('Plot') }}</p>
+            <p>{{ __('Manage Plot') }}</p>
         </a>
       </li>
 
@@ -46,8 +46,8 @@
           <p>{{ __('Reminders') }}</p>
         </a>
       </li>
-      <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }} bg-light">
-        <a class="nav-link text-dark" href="{{ route('upgrade') }}">
+      <li class="nav-item active-pro bg-light">
+        <a class="nav-link text-dark" href="#">
           <i class="material-icons">unarchive</i>
           <p>{{ __('Call Technical Support') }}</p>
         </a>
