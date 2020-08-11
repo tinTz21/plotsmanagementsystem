@@ -23,4 +23,8 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    public function create(){
+        return view('auth.customer');
+    }
 }

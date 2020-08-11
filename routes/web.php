@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController; 	
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +67,5 @@ Route::get('plot','PlotController@index')->name('plot');
 Route::get('create-plot','PlotController@create')->name('create-plot');
 Route::post('create-plot','PlotController@store')->name('create-plot');
 Route::get('/plot/show/{id}','PlotController@show');
+
+Route::get('create-customer','HomeController@create')->name('create-customer');

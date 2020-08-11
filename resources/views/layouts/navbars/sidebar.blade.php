@@ -29,7 +29,7 @@
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="fa fa-home"></i>
-            <p>{{ __('Customers') }}</p>
+            <p>{{ __('Manage Customers') }}</p>
         </a>
       </li>
 

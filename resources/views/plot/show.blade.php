@@ -22,7 +22,7 @@
 					<h4>Plot Addreess</h4>
 					<div class="row">
 						<div class="col-md-3">
-							<b>Country: </b>{{$plot->country}}
+							<b>Country:{{$plot->country}} </b>
 						</div>
 						<div class="col-md-3">
 							<b>Region: </b>{{$plot->region}}

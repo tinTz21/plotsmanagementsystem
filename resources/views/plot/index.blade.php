@@ -86,7 +86,7 @@
     		<div class="col-md-6">
     			<div class="card text-center" >
     				 <a href="{{url('plot/show',$plot->id)}}">
-		    		<div class="card-header card-header-info"> {{$plot->region}}&nbsp;&nbsp;&nbsp;{{$plot->district}} &nbsp;&nbsp;&nbsp; {{$plot->street}}</div>
+		    		<div class="card-header card-header-info">{{$plot->country}},&nbsp; {{$plot->region}},&nbsp;&nbsp;&nbsp;{{$plot->district}}---{{$plot->street}}</div>
 		    		<div class="card-body">
 		    		<h5>Plot Description</h5>
 		    		{{$plot->description}}
