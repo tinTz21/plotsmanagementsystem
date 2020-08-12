@@ -13,15 +13,12 @@
     </div>
 
 
-
+<form class="form" method="POST" action="{{ route('customer') }}">
+        @csrf
     <div class="container-fluid" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-lg-12 col-md-12 col-sm-8 ml-auto mr-auto">
-      <form class="form" method="POST" action="{{ route('register') }}">
-        @csrf
-
         <div class="card card-login card-hidden mb-6">
-
           <div class="card-body ">
             <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
               <div class="input-group">
@@ -30,7 +27,7 @@
                       <i class="material-icons">face</i>
                   </span>
                 </div>
-                <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ old('name') }}" required>
+                <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" required>
               </div>
               @if ($errors->has('name'))
                 <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
@@ -45,7 +42,8 @@
                     <i class="material-icons">email</i>
                   </span>
                 </div>
-                <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required>
+                
+                <input type="email" name="email" class="form-control" placeholder="Email...">
               </div>
               @if ($errors->has('email'))
                 <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">

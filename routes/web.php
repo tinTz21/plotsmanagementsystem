@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -69,3 +70,4 @@ Route::post('create-plot','PlotController@store')->name('create-plot');
 Route::get('/plot/show/{id}','PlotController@show');
 
 Route::get('create-customer','HomeController@create')->name('create-customer');
+Route::post('customer','HomeController@store')->name('customer');

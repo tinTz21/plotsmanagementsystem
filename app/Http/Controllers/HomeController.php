@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -25,6 +27,16 @@ class HomeController extends Controller
     }
 
     public function create(){
+        // dd('error');
         return view('auth.customer');
+    }
+
+    public function store(Request $request){
+         $store=new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+         ]);
+        $store->save();
+        return back()->withStatus(__('customer successfully updated.'));
     }
 }
