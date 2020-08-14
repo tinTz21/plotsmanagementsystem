@@ -35,8 +35,14 @@ class HomeController extends Controller
          $store=new User([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'country' => $request->get('country'),
+            'district' => $request->get('district'),
+            'street' => $request->get('street'),
+            'sex' => $request->get('sex'),
+            'yob' => $request->get('yob'),
+            'type' => $request->get('type'),
          ]);
         $store->save();
-        return back()->withStatus(__('customer successfully updated.'));
+        return redirect('table-list')->withStatus(__('customer successfully updated.'));
     }
 }

@@ -35,7 +35,10 @@
                 </div>
               @endif
             </div>
-            <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
+
+
+
+                        <div class="bmd-form-group{{ $errors->has('email') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -51,6 +54,126 @@
                 </div>
               @endif
             </div>
+
+
+
+
+            <div class="bmd-form-group{{ $errors->has('country') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                <input type="text" name="country" class="form-control" placeholder="{{ __('country...') }}" required>
+              </div>
+              @if ($errors->has('name'))
+                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
+                  <strong>{{ $errors->first('name') }}</strong>
+                </div>
+              @endif
+            </div>
+
+
+            <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                <input type="text" name="region" class="form-control" placeholder="{{ __('Region...') }}" required>
+              </div>
+              @if ($errors->has('region'))
+                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
+                  <strong>{{ $errors->first('name') }}</strong>
+                </div>
+              @endif
+            </div>
+
+
+            <div class="bmd-form-group{{ $errors->has('district') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                <input type="text" name="district" class="form-control" placeholder="{{ __('District...') }}" required>
+              </div>
+              @if ($errors->has('district'))
+                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
+                  <strong>{{ $errors->first('name') }}</strong>
+                </div>
+              @endif
+            </div>
+
+
+            <div class="bmd-form-group{{ $errors->has('street') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                <input type="text" name="street" class="form-control" placeholder="{{ __('street...') }}" required>
+              </div>
+              @if ($errors->has('street'))
+                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
+                  <strong>{{ $errors->first('street') }}</strong>
+                </div>
+              @endif
+            </div>
+
+
+            <div class="bmd-form-group{{ $errors->has('yob') ? ' has-danger' : '' }}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                <input type="date" name="yob" class="form-control" placeholder="{{ __('Year Of Birth...') }}" required>
+              </div>
+              @if ($errors->has('yob'))
+                <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
+                  <strong>{{ $errors->first('yob') }}</strong>
+                </div>
+              @endif
+            </div>
+
+
+           <div class="form-group">
+                  <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                  <select class="form-control" id="sex" name="sex" class="form-control">
+                    <option>Sex</option>
+                    <option value="male">Male</option>
+                    <option value="femail">Female</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <div class="input-group-prepend">
+                  <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                  </span>
+                </div>
+                  <select class="form-control" id="sex" name="type" class="form-control">
+                    <option>User Type</option>
+                    <option value="male">Seller</option>
+                    <option value="femail">Buyer</option>
+                  </select>
+                </div>
+
+
+
+
+
             <div class="bmd-form-group{{ $errors->has('password') ? ' has-danger' : '' }} mt-3">
               <div class="input-group">
                 <div class="input-group-prepend">
