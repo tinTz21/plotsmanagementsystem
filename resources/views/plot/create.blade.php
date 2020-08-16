@@ -3,6 +3,11 @@
 @section('content')
 <div class="content">
   <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{{route('plot')}}" class="btn btn-primary">Back</a>
+      </div>
+    </div>
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title">Register New Plot</h4>

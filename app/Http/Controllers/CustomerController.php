@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class CustomerController extends Controller
 {
@@ -13,7 +14,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customer=User::latest()->get();
+        return view('pages.index',compact('customer'));
     }
 
     /**
@@ -23,7 +25,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('auth.customer');
     }
 
     /**
@@ -32,9 +34,22 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+public function store(Request $request){
+         $store=new User([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'country' => $request->get('country'),
+            'region'=>$request->get('region'),
+            'district' => $request->get('district'),
+            'street' => $request->get('street'),
+            'sex' => $request->get('sex'),
+            'yob' => $request->get('yob'),
+            'type' => $request->get('type'),
+            'customer' =>$request->get('customer'),
+         ]);
+        $store->save();
+
+        return redirect()->route('customer.index')->withStatus(__('customer successfully updated.'));
     }
 
     /**

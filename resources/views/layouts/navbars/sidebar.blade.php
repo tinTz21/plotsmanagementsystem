@@ -27,14 +27,14 @@
 
 
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
+        <a class="nav-link" href="{{ route('customer.index') }}">
           <i class="fa fa-home"></i>
             <p>{{ __('Manage Customers') }}</p>
         </a>
       </li>
 
       <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('typography') }}">
+        <a class="nav-link" href="{{ route('payments.index') }}">
           <i class="material-icons">library_books</i>
             <p>{{ __('Payments') }}</p>
         </a>

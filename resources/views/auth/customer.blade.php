@@ -15,6 +15,7 @@
 
 <form class="form" method="POST" action="{{ route('customer') }}">
         @csrf
+        <input type="hidden" name="customer" value="customer">
     <div class="container-fluid" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-lg-12 col-md-12 col-sm-8 ml-auto mr-auto">
@@ -165,8 +166,8 @@
                 </div>
                   <select class="form-control" id="sex" name="type" class="form-control">
                     <option>User Type</option>
-                    <option value="male">Seller</option>
-                    <option value="femail">Buyer</option>
+                    <option value="Seller">Seller</option>
+                    <option value="Buyer">Buyer</option>
                   </select>
                 </div>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController; 	
+use App\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
+	// Route::get('table-list', function () {
+	// 	$customer=App\User::all();
+	// 	return view('pages.table_list',compact('customer'));
+	// })->name('table');
 
 	Route::get('typography', function () {
 		return view('pages.typography');
@@ -68,6 +70,15 @@ Route::get('plot','PlotController@index')->name('plot');
 Route::get('create-plot','PlotController@create')->name('create-plot');
 Route::post('create-plot','PlotController@store')->name('create-plot');
 Route::get('/plot/show/{id}','PlotController@show');
+Route::post('/delete/{id}','PlotController@destroy');
 
-Route::get('create-customer','HomeController@create')->name('create-customer');
-Route::post('customer','HomeController@store')->name('customer');
+
+#Customer
+Route::get('create-customer','CustomerController@create')->name('create-customer');
+Route::post('customer','CustomerController@store')->name('customer');
+Route::get('pages.table_list','CustomerController@index')->name('customer.index');
+
+#Payments
+Route::get('payments/{id}','PaymentController@create')->name('payments.create');
+Route::post('payments','PaymentController@store')->name('payments');
+Route::get('payments','PaymentController@index')->name('payments.index');

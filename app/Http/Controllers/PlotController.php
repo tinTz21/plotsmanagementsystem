@@ -38,27 +38,6 @@ class PlotController extends Controller
      */
     public function store(Request $request)
     {
-            // $plot = new Plot;
-            // $plot->plot_number       = $request()->get('plot_number');
-            // $plot->description       = $request()->get('description');
-            // $plot->plot_size       = $request()->get('plot_size');
-            // $plot->block_number       = $request()->get('block_number');
-            // $plot->country       = $request()->get('country');
-            // $plot->region       = $request()->get('region');
-            // $plot->district       = $request()->get('district');
-            // $plot->street       = $request()->get('street');
-            // $plot->tanroad_distance       = $request()->get('tanroad_distance');
-            // $plot->tt_drawing       = $request()->get('tt_drawing');
-            // $plot->survey_number       = $request()->get('survey_number');
-            // $plot->north_width       = $request()->get('north_width');
-            // $plot->west_width       = $request()->get('west_width');
-            // $plot->south_width       = $request()->get('south_width');
-            // $plot->east_width       = $request()->get('east_width');
-            // $plot->attachment       = $request()->get('attachment');
-            // $plot->positions       = $request()->get('positions');
-            // $plot->map       = $request()->get('map');
-            // $plot->map =$request()->get('status');
-            // $plot->save();
             Plot::create($request->all());
             return redirect('plot')->with('success','Plot Created Successfully!');
         }
@@ -73,8 +52,9 @@ class PlotController extends Controller
      */
     public function show($id)
     {
+        $customer=\App\User::latest()->get();
         $plot=Plot::find($id);
-        return view('plot/show',compact('plot'));
+        return view('plot/show',compact(array('customer','plot')));
     }
 
     /**
@@ -106,8 +86,10 @@ class PlotController extends Controller
      * @param  \App\Plot  $plot
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Plot $plot)
+    public function destroy($id)
     {
-        //
+        $plot=Plot::find($id);
+        $plot->delete();
+        return redirect()->route('plot')->with('success','Plot Deleted Successfully');
     }
 }

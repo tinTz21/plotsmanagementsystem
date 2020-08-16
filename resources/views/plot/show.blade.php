@@ -2,6 +2,18 @@
 
 @section('content')
 <div class="content">
+	<div class="row">
+		<div class="col-md-6">
+			<a class="btn btn-primary" href="{{route('plot')}}">Back</a>
+		</div>
+		<div class="col-md-2">
+			
+		</div>
+		<div class="col-md-4">
+			@include('payments.payment')
+			@include('payments.delete')
+		</div>
+	</div>
 	<div class="card">
 		<div class="card-header card-header-primary">
 			<div class="row text-center">
