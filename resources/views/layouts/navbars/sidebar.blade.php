@@ -41,7 +41,7 @@
       </li>
 
       <li class="nav-item{{ $activePage == 'notifications' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('notifications') }}">
+        <a class="nav-link" href="#">
           <i class="material-icons">notifications</i>
           <p>{{ __('Reminders') }}</p>
         </a>
