@@ -21,21 +21,21 @@
           <div class="col-md-4">
             <label> Plot Number</label>
             <div class="col-xs-4">
-              <input type="number" name="plot_number" class="form-control" placeholder="type...">
+              <input type="text" name="plot_number" class="form-control" placeholder="type...">
             </div>
           </div>
 
           <div class="col-md-4">
             <label> Plot Size(sqm)</label>
             <div class="col-xs-6">
-              <input type="number" class="form-control" name="plot_size" placeholder="type...">
+              <input type="text" class="form-control" name="plot_size" placeholder="type...">
             </div>
           </div>
 
           <div class="col-md-4">
             <label> Block Number</label>
             <div class="col-xs-6">
-              <input type="number" class="form-control" name="block_number" placeholder="type...">
+              <input type="text" class="form-control" name="block_number" placeholder="type...">
             </div>
           </div>&nbsp;
 
@@ -84,21 +84,21 @@
              <div class="col-md-4">
             <label> TanRoad Distance(in km)</label>
             <div class="col-xs-4">
-              <input type="number" class="form-control" name="tanroad_distance" placeholder="type...">
+              <input type="text" class="form-control" name="tanroad_distance" placeholder="type...">
             </div>
           </div>
 
           <div class="col-md-4">
             <label>TP  Drawing</label>
             <div class="col-xs-6">
-              <input type="number" class="form-control" name="tt_drawing" placeholder="type...(in sqm)">
+              <input type="text" class="form-control" name="tt_drawing" placeholder="type...(in sqm)">
             </div>
           </div>
 
           <div class="col-md-4">
             <label>Survey Number</label>
             <div class="col-xs-6">
-              <input type="number" class="form-control" name="survey_number" placeholder="type...">
+              <input type="text" class="form-control" name="survey_number" placeholder="type...">
             </div>
           </div>&nbsp;
 
@@ -168,8 +168,8 @@
                 <div class="col-md-6">
                   <button class="btn btn-primary">Back</button>
                 </div>
-                <div class="col-md-6">
-                  <button type="submit" class="btn btn-primary">Send</button>
+                <div class="col-md-6 text-right">
+                  <button type="submit" class="btn btn-primary">Save</button>
                 </div>
               </div>
             </div>

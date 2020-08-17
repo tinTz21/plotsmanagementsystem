@@ -30,10 +30,17 @@
           <div class="col-md-12">
             <label>Select Customer</label>
             <select class="form-control" name="customer">
+              <option>Select Customer</option>
                @foreach($customer as $customer)
-               <option  value="{{$customer->name}}">
-                {{$customer->name}}
+               @if(!$customer->customer)
+               <option >
+                  Go To Manage Customer To Register Them Before Selecting
                </option>
+               @elseif($customer->customer)
+               <option  value="{{$customer->name}}">
+               {{$customer->name}}
+               </option>
+               @endif
                @endforeach
           </select>
           </div>
@@ -46,6 +53,7 @@
           <div class="col-md-12">
             <label>Payment Method</label>
             <select class="form-control" name="method">
+              <option>Select One</option>
               <option value="Mobile Money Payments">Mobile Money Payments</option>
               <option value="Banking Payments">Banking Payments</option>
               <option value="Cash">Cash</option>

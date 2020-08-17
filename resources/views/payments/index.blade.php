@@ -9,7 +9,7 @@
               <div class="card">
                 
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Our Customer Table</h4>
+                  <h4 class="card-title ">Payments Records</h4>
                 </div>
                 
                   <div class="card-body">
@@ -28,6 +28,7 @@
                           <th>
                            Status
                           </th>
+                          <th>Recorded At</th>
                       </thead>
                         @foreach($payments as $payments)
 

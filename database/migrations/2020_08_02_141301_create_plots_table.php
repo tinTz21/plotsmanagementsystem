@@ -16,28 +16,26 @@ class CreatePlotsTable extends Migration
         Schema::create('plots', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->text('plot_number');
-            $table->integer('plot_size');
-            $table->text('block_number');
-
-            $table->text('description');
-            $table->text('country');
-            $table->text('region');
-            $table->text('district');
-            $table->text('street');
-
-            $table->text('tanroad_distance');
-            $table->text('tt_drawing');
-            $table->integer('survey_number');
-            $table->text('north_width');
-            $table->text('west_width');
-            $table->text('south_width');
-            $table->text('east_width');
-            
-            $table->text('attachment');
-            $table->text('positions');
-            $table->text('map');
-            $table->text('status');
+            $table->text('plot_number')->nullable();
+            $table->text('text')->nullable();
+            $table->text('block_number')->nullable();
+            $table->text('plot_size')->nullable();
+            $table->text('description')->nullable();
+            $table->text('country')->nullable();
+            $table->text('region')->nullable();
+            $table->text('district')->nullable();
+            $table->text('street')->nullable();
+            $table->text('tanroad_distance')->nullable();
+            $table->text('tt_drawing')->nullable();
+            $table->text('survey_number')->nullable();
+            $table->text('north_width')->nullable();
+            $table->text('west_width')->nullable();
+            $table->text('south_width')->nullable();
+            $table->text('east_width')->nullable();
+            $table->text('attachment')->nullable();
+            $table->text('positions')->nullable();
+            $table->text('map')->nullable();
+            $table->text('status')->nullable();
             $table->timestamps();
         });
     }
