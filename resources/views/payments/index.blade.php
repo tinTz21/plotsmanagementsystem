@@ -29,6 +29,7 @@
                            Status
                           </th>
                           <th>Recorded At</th>
+                          <th>View</th>
                       </thead>
                         @foreach($payments as $payments)
 
@@ -48,6 +49,9 @@
                                 </td>
                                 <td>
                                   {{$payments->created_at}}
+                                </td>
+                                <td>
+                                  <a href="{{url('payments/show',$payments->id)}}"><i class="fa fa-eye"></i></a>
                                 </td>
                               </tr>
                             </tbody>

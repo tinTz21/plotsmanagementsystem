@@ -69,9 +69,10 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function show(Payment $payment)
+    public function show($id)
     {
-        //
+        $payments=Payment::find($id);
+        return view('payments.show',compact('payments'));
     }
 
     /**
@@ -103,8 +104,10 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payment $payment)
+    public function destroy($id)
     {
-        //
+        $payments=Payment::find($id);
+        $payments->delete();
+        return redirect()->route('payments.index')->with('success', 'Payments Deleted Successfully');
     }
 }

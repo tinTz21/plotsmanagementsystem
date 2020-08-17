@@ -77,8 +77,13 @@ Route::post('/delete/{id}','PlotController@destroy');
 Route::get('create-customer','CustomerController@create')->name('create-customer');
 Route::post('customer','CustomerController@store')->name('customer');
 Route::get('pages.table_list','CustomerController@index')->name('customer.index');
+Route::get('customer/show/{id}','CustomerController@show')->name('customer.show');
+Route::get('customer/delete/{id}','CustomerController@destroy');
 
 #Payments
 Route::get('payments/{id}','PaymentController@create')->name('payments.create');
 Route::post('payments','PaymentController@store')->name('payments');
 Route::get('payments','PaymentController@index')->name('payments.index');
+Route::get('payments/show/{id}','PaymentController@show')->name('payments.show');
+Route::get('payments/delete/{id}','PaymentController@destroy');
+

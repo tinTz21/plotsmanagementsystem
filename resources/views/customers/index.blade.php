@@ -40,6 +40,7 @@
                         <th>
                           Created At
                         </th>
+                        <th>View</th>
                       </thead>
                       @foreach($customer as $customer)
                         @if($customer->customer)
@@ -59,6 +60,9 @@
                                 </td>
                                 <td>
                                   {{$customer->created_at}}
+                                </td>
+                                <td>
+                                  <a href="{{url('customer/show',$customer->id)}}"><i class="fa fa-eye fa-1x"></i></a>
                                 </td>
                               </tr>
                             </tbody>

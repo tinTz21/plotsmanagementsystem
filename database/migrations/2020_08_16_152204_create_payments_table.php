@@ -15,25 +15,25 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->text('customer');
-            $table->text('status');
-            $table->text('method');
-            $table->text('number_of_installments');
-            $table->text('cash');
-            $table->text('account');
-            $table->text('unpayed');
-            $table->text('agreement_attachment');
-            $table->text('receipt_attachment');
-            $table->text('receipt');
-            $table->text('size');
-            $table->text('plot');
-            $table->text('block');
-            $table->text('geo');
-            $table->text('tp');
-            $table->text('country');
-            $table->text('region');
-            $table->text('district');
-            $table->text('street');
+            $table->text('customer')->nullable();
+            $table->text('status')->nullable();
+            $table->text('method')->nullable();
+            $table->text('number_of_installments')->nullable();
+            $table->text('cash')->nullable();
+            $table->text('account')->nullable();
+            $table->text('unpayed')->nullable();
+            $table->text('agreement_attachment')->nullable();
+            $table->text('receipt_attachment')->nullable();
+            $table->text('receipt')->nullable();
+            $table->text('size')->nullable();
+            $table->text('plot')->nullable();
+            $table->text('block')->nullable();
+            $table->text('geo')->nullable();
+            $table->text('tp')->nullable();
+            $table->text('country')->nullable();
+            $table->text('region')->nullable();
+            $table->text('district')->nullable();
+            $table->text('street')->nullable();
             $table->timestamps();
         });
     }

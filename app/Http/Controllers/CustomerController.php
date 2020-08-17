@@ -15,7 +15,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customer=User::latest()->get();
-        return view('pages.index',compact('customer'));
+        return view('customers.index',compact('customer'));
     }
 
     /**
@@ -46,6 +46,9 @@ public function store(Request $request){
             'yob' => $request->get('yob'),
             'type' => $request->get('type'),
             'customer' =>$request->get('customer'),
+            'phone' => $request->get('phone'),
+            'identification' => $request->get('identification'),
+            'identification_number' => $request->get('identification_number'),
          ]);
         $store->save();
 
@@ -60,7 +63,8 @@ public function store(Request $request){
      */
     public function show($id)
     {
-        //
+        $customer=User::find($id);
+        return view('customers.show',compact('customer'));
     }
 
     /**
@@ -94,6 +98,8 @@ public function store(Request $request){
      */
     public function destroy($id)
     {
-        //
+         $customer=User::find($id);
+        $customer->delete();
+        return redirect()->route('customer.index')->with('success','Customer Deleted Successfully');
     }
 }
