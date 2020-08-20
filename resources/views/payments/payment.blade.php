@@ -8,10 +8,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Payments Information</h5>
+        <div class="row">
+          <div class="col-md-8">
+            <h5 class="modal-title" id="exampleModalLabel">Add Payments Information</h5>
+          </div>
+          <div class="col-md-4">
+             <a class="btn btn-primary" href="{{route('create-customer')}}">Add Customer</a>
+          </div>
+        </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+
       </div>
 
       <form method="POST" action="{{route('payments')}}">
@@ -32,11 +40,8 @@
             <select class="form-control" name="customer">
               <option>Select Customer</option>
                @foreach($customer as $customer)
-               @if(!$customer->customer)
-               <option >
-                  Go To Manage Customer To Register Them Before Selecting
-               </option>
-               @elseif($customer->customer)
+
+               @if($customer->customer)
                <option  value="{{$customer->name}}">
                {{$customer->name}}
                </option>

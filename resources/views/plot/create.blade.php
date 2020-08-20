@@ -82,16 +82,16 @@
             </div>
 
              <div class="col-md-4">
-            <label> TanRoad Distance(in km)</label>
+            <label> TanRoad Distance</label>
             <div class="col-xs-4">
-              <input type="text" class="form-control" name="tanroad_distance" placeholder="type...">
+              <input type="text" class="form-control" name="tanroad_distance" placeholder="e.g. 10 km's or 690 meters">
             </div>
           </div>
 
           <div class="col-md-4">
             <label>TP  Drawing</label>
             <div class="col-xs-6">
-              <input type="text" class="form-control" name="tt_drawing" placeholder="type...(in sqm)">
+              <input type="text" class="form-control" name="tt_drawing" placeholder="type...">
             </div>
           </div>
 
@@ -156,7 +156,22 @@
               <input type="text" name="status" class="form-control">
             </div>
             <div class="col-md-6">
-              <label>Attach Photo</label>
+              <label>Plot's Photo</label>
+              <input type="file" name="" class="form-control">
+            </div>
+             </div>
+
+           </div>
+
+            <div class="col-md-12">&nbsp;
+             <div class="row">
+
+                <div class="col-md-6">
+              <label>Historical Document</label>
+              <input type="file" name="status" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label>Purchase Agreement</label>
               <input type="file" name="" class="form-control">
             </div>
              </div>
