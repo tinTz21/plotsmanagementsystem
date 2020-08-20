@@ -50,9 +50,17 @@
           </select>
           </div>
 
+           <div class="col-md-12">
+            <label>Purchase Price</label>
+            <input type="text" name="cash" class="form-control" placeholder="e.g. 20000Tsh">
+          </div>
+
           <div class="col-md-12">
-            <label>Size Bought (In Sqm)</label>
+            <label>Payment Plan</label>
+            <div class="col-md-12">
+            <label>Size Bought--I'm in development progress with this</label>
             <input type="number" name="size" class="form-control" placeholder="add size...">
+          </div>
           </div>
 
           <div class="col-md-12">
@@ -70,10 +78,7 @@
             <input type="text" name="account" class="form-control" placeholder="e.g. +255758xxxxxx or  0132xxxxxxxxx-CRDB">
           </div>
 
-           <div class="col-md-12">
-            <label>Add Amount</label>
-            <input type="text" name="cash" class="form-control" placeholder="e.g. 20000Tsh">
-          </div>
+          
 
           <div class="col-md-6">
             <label>Payment Status</label>

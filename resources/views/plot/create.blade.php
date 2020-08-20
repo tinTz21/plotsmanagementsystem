@@ -26,7 +26,7 @@
           </div>
 
           <div class="col-md-4">
-            <label> Plot Size(sqm)</label>
+            <label> Plot Size(SQM)</label>
             <div class="col-xs-6">
               <input type="text" class="form-control" name="plot_size" placeholder="type...">
             </div>
@@ -50,7 +50,6 @@
               <label>Country</label>
              <div class="col-xs-12">
                <select class="mdb-select md-form" name="country" searchable="Search here..">
-                  <option value="" disabled selected>Choose your country</option>
                   <option value="Tanzania">Tanzania</option>
                   <option value="Kenya">Kenya</option>
                   <option value="Uganda">Uganda</option>
@@ -175,8 +174,14 @@
               <input type="file" name="" class="form-control">
             </div>
              </div>
-
+&nbsp;
            </div>
+           
+           <div class="col-md-6">
+              <label>Due Diligence Info</label>
+              <input type="file" name="" class="form-control">
+            </div>
+             </div>
 
             <div class="col-md-12">
               <div class="row">
