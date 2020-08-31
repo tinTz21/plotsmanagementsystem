@@ -7,13 +7,10 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header modal-header-primary">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-12">
             <h5 class="modal-title" id="exampleModalLabel">Add Payments Information</h5>
-          </div>
-          <div class="col-md-4">
-             <a class="btn btn-primary" href="{{route('create-customer')}}">Add Customer</a>
           </div>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -25,6 +22,8 @@
       <form method="POST" action="{{route('payments')}}">
         @csrf
 
+        <input type="hidden" name="customer" value="customer">
+
         <input type="hidden" name="plot" value="{{$plot->plot_number}}">
         <input type="hidden" name="block" value="{{$plot->plot_size}}">
         <input type="hidden" name="geo" value="{{$plot->positions }}">
@@ -35,7 +34,7 @@
         <input type="hidden" name="street" value="{{$plot->street}}">
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-12">
+<!--           <div class="col-md-12">
             <label>Select Customer</label>
             <select class="form-control" name="customer">
               <option>Select Customer</option>
@@ -48,22 +47,64 @@
                @endif
                @endforeach
           </select>
+          </div> -->
+          <div class="col-md-12 text-center">
+            <label><b>Customer Details</b></label>
+          </div>
+          <div class="col-md-12">
+            <div class="row">
+                 <div class="col-md-6">
+            <label>Customer Name</label>
+           <input type="text" name="name" class="form-control" placeholder="Enter Customer Name">
           </div>
 
-           <div class="col-md-12">
-            <label>Purchase Price</label>
-            <input type="text" name="cash" class="form-control" placeholder="e.g. 20000Tsh">
+           <div class="col-md-6">
+            <label>Customer Email</label>
+           <input type="text" name="email" class="form-control" placeholder="Enter Customer Email">
+          </div>
+            </div>
           </div>
 
           <div class="col-md-12">
-            <label>Payment Plan</label>
-            <div class="col-md-12">
-            <label>Size Bought--I'm in development progress with this</label>
-            <input type="number" name="size" class="form-control" placeholder="add size...">
+            <div class="row">
+               <div class="col-md-6">
+            <label>Customer Country</label>
+           <input type="text" name="country" class="form-control" placeholder="Enter Customer Country">
           </div>
+
+          <div class="col-md-6">
+            <label>Size Bought By This Customer</label>
+            <input type="text" name="size" class="form-control" placeholder="add size...">
+          </div>
+            </div>
           </div>
 
           <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <label>ID Type</label>
+                <input type="text" name="identification" class="form-control" placeholder="Enter type">
+              </div>
+              <div class="col-md-6">
+                <label>ID Number</label>
+                <input type="text" name="identification_number" class="form-control" placeholder="Enter number_of_installments">
+              </div>
+            </div>
+          </div>
+&nbsp;
+          <div class="col-md-12 text-center">
+            <label><b>Payment Plan</b></label>
+          </div>
+
+        <div class="col-md-12">
+           <div class="row">
+            <div class="col-md-6">
+            <label>Issue Date</label>
+            <input type="date" name="date" class="form-control">
+          </div>
+
+
+          <div class="col-md-6">
             <label>Payment Method</label>
             <select class="form-control" name="method">
               <option>Select One</option>
@@ -72,6 +113,8 @@
               <option value="Cash">Cash</option>
             </select>
           </div>
+         </div>
+        </div>
 
           <div class="col-md-12">
             <label>Add Mobile/Bank Account Number</label>

@@ -52,7 +52,7 @@ public function store(Request $request){
          ]);
         $store->save();
 
-        return redirect()->route('customer.index')->withStatus(__('customer successfully updated.'));
+        return redirect()->route('customer.index')->withStatus(__('customer Created successfully.'));
     }
 
     /**

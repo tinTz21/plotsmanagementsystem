@@ -15,8 +15,10 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->text('customer')->nullable();
             $table->text('status')->nullable();
+            $table->time('date')->nullable();
             $table->text('method')->nullable();
             $table->text('number_of_installments')->nullable();
             $table->text('cash')->nullable();
@@ -35,6 +37,11 @@ class CreatePaymentsTable extends Migration
             $table->text('district')->nullable();
             $table->text('street')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

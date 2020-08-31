@@ -36,7 +36,7 @@
                             <tbody>
                               <tr>
                                 <td>
-                                  {{$payments->customer}}
+                                  {{$payments->user->name}}
                                 </td>
                                 <td>
                                   {{$payments->size}} sqm

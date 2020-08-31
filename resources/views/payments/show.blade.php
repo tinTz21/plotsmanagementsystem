@@ -9,16 +9,19 @@
               <div class="card">
                 
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title"><b>{{$payments->country}}, {{$payments->region}}, {{$payments->district}}, {{$payments->street}}&nbsp;&nbsp;</b><b>Block Number: </b> {{$payments->block}}, <b>Plot Number: </b>&nbsp;&nbsp;{{$payments->plot}}</h4>
+                  <h4 class="card-title"><b>{{$payments->country}}, {{$payments->region}}, {{$payments->district}}, {{$payments->street}}&nbsp;&nbsp;</b><b>Block Number: </b> {{$payments->block}}, <b>Plot Number: </b>&nbsp;&nbsp;{{$payments->plot}}  </h4>
                 </div>
                 
                   <div class="card-body">
 
                     <div class="row">
+                      <div class="col-md-12 text-right">
+                        @include('payments.showmodel.update')
+                      </div>
                       <div class="col-md-4">
                         <label>Buyer Name</label>
                         <div class="col-xs-4">
-                          {{$payments->customer}}
+                          {{$payments->user->name}}
                         </div>
                       </div>
 

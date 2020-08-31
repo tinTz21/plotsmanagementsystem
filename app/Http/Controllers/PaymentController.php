@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Payment;
 use Illuminate\Http\Request;
+use App\User;
 
 class PaymentController extends Controller
 {
@@ -38,8 +39,24 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
+
+             $user=new User;
+         $user->name=$request->get('name');
+         $user->email=$request->get('email');
+         $user->customer=$request->get('customer');
+        $user->country = $request->get('country');
+        $user->region =$request->get('region');
+        $user->district =$request->get('district');
+        $user->phone =$request->get('phone');
+        $user->identification = $request->get('identification');
+        $user->identification_number = $request->get('identification_number');
+        $user->save();
+
+
+
         $customer=new Payment([
-            'status' => $request->get('status'), 
+            'status' => $request->get('status'),
+            'date'=>$request->get('date'),
             'method' => $request->get('method'), 
             'number_of_installments' => $request->get('number_of_installments'), 
             'cash'=>$request->get('cash'), 
@@ -58,8 +75,8 @@ class PaymentController extends Controller
             'street' =>$request->get('street'),
             'customer'=>$request->get('customer'), 
          ]);
+        $customer->user_id = $user->id;
         $customer->save();
-
         return redirect()->route('payments.index')->withStatus(__('customer successfully updated.'));
     }
 
