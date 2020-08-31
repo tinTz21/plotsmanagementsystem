@@ -83,11 +83,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label>ID Type</label>
-                <input type="text" name="identification" class="form-control" placeholder="Enter type">
+                <input type="text" name="identification" class="form-control" placeholder="Enter ID type">
               </div>
               <div class="col-md-6">
                 <label>ID Number</label>
-                <input type="text" name="identification_number" class="form-control" placeholder="Enter number_of_installments">
+                <input type="text" name="identification_number" class="form-control" placeholder="Enter ID Number">
               </div>
             </div>
           </div>
