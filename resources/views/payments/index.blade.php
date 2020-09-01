@@ -20,15 +20,16 @@
                             Customer Name
                           </th>
                           <th>
-                            Size Bought
+                            Plot Address
                           </th>
                           <th>
-                            Account Number
+                            Agreed Price
                           </th>
                           <th>
-                           Status
+                           Amount Paid
                           </th>
-                          <th>Recorded At</th>
+                          <th>Amount Due</th>
+                          <th>Next Payment</th>
                           <th>View</th>
                       </thead>
                         @foreach($payments as $payments)
@@ -39,16 +40,19 @@
                                   {{$payments->user->name}}
                                 </td>
                                 <td>
-                                  {{$payments->size}} sqm
+                                  {{$payments->region}}, {{$payments->district}}, {{$payments->street}}
                                 </td>
                                 <td>
-                                  {{$payments->account}}
+                                  {{$payments->agreed}}
                                 </td>
                                 <td>
-                                  {{$payments->status}}
+                                  {{$payments->paid}}
                                 </td>
                                 <td>
-                                  {{$payments->created_at}}
+                                  {{ ((int)$payments['agreed'] - (int)$payments['paid'])}} Tsh
+                                </td>
+                                <td>
+                                  {{$payments->next_pay}}
                                 </td>
                                 <td>
                                   <a href="{{url('payments/show',$payments->id)}}"><i class="fa fa-eye"></i></a>

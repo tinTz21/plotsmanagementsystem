@@ -26,8 +26,10 @@ class PaymentController extends Controller
      */
     public function create($id)
     {
-        $plot=\App\Plot::find($id);
         $customer=\App\User::latest()->get();
+
+
+        $plot=\App\Plot::find($id);
         return view('payments.create',compact(array('plot','customer')));
     }
 
@@ -40,17 +42,17 @@ class PaymentController extends Controller
     public function store(Request $request)
     {
 
-             $user=new User;
-         $user->name=$request->get('name');
-         $user->email=$request->get('email');
-         $user->customer=$request->get('customer');
-        $user->country = $request->get('country');
-        $user->region =$request->get('region');
-        $user->district =$request->get('district');
-        $user->phone =$request->get('phone');
-        $user->identification = $request->get('identification');
-        $user->identification_number = $request->get('identification_number');
-        $user->save();
+                $user=new User;
+                $user->name=$request->get('name');
+                $user->email=$request->get('email');
+                $user->customer=$request->get('customer');
+                $user->country = $request->get('country');
+                $user->region =$request->get('region');
+                $user->district =$request->get('district');
+                $user->phone =$request->get('phone');
+                $user->identification = $request->get('identification');
+                $user->identification_number = $request->get('identification_number');
+                $user->save();
 
 
 
@@ -74,6 +76,9 @@ class PaymentController extends Controller
             'district' =>$request->get('district'),
             'street' =>$request->get('street'),
             'customer'=>$request->get('customer'), 
+            'agreed' => $request->get('agreed'),
+            'paid' => $request->get('paid'),
+            'next_pay' => $request->get('next_pay'),
          ]);
         $customer->user_id = $user->id;
         $customer->save();

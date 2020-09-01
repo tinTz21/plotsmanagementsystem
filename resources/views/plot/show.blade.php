@@ -10,7 +10,8 @@
 			
 		</div>
 		<div class="col-md-4">
-			@include('payments.payment')
+			{{--@include('payments.payment')--}}
+			<a href="{{route('payments.create',$plot->id)}}" class="btn btn-success">SELL THIS PLOT</a>
 			@include('payments.delete')
 		</div>
 	</div>

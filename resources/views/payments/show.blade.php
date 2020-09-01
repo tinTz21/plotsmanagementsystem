@@ -15,77 +15,103 @@
                   <div class="card-body">
 
                     <div class="row">
-                      <div class="col-md-12 text-right">
-                        @include('payments.showmodel.update')
+                      
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-md-10">
+                            
+                          </div>
+                          <div class="col-md-2">
+                            @include('payments.showmodel.update')
+                          </div>
+                        </div>
                       </div>
-                      <div class="col-md-4">
-                        <label>Buyer Name</label>
-                        <div class="col-xs-4">
-                          {{$payments->user->name}}
+                      <div class="col-md-12">
+                        <h5><b>Payment</b></h5>
+                      </div>
+                      <div class="col-md-6">
+                       <div class="row">&nbsp;
+                          <label class="col-sm-3"><b>Agreed Price</b></label>
+                        <div class="col-sm-7">
+                          {{$payments->agreed}}
+                        </div>
+                       </div>
+                      </div>
+                      <div class="col-md-6">
+                       <div class="row">
+                          <label class="col-sm-3"><b>Amount Paid</b></label>
+                        <div class="col-sm-7">
+                          {{$payments->paid}}
+                        </div>
+                       </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-3"><b>Amount Due</b></label>
+                        <div class="col-sm-7">
+                          {{ ((int)$payments['agreed'] - (int)$payments['paid'])}} Tsh
+                        </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-3"><b>Next Payment</b></label>
+                        <div class="col-sm-7">
+                          {{$payments->next_pay}}
+                        </div>
                         </div>
                       </div>
 
-                      <div class="col-md-4">
-                        <label>Plot Status</label>
-                        <div class="col-xs-4">
+                       <div class="col-md-6">
+                       <div class="row">
+                          <label class="col-sm-5"><b>First Payment Issued On</b></label>
+                        <div class="col-sm-7">
+                          {{$payments->created_at}}
+                        </div>
+                       </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-4"><b>Payment Status</b></label>
+                        <div class="col-sm-7">
                           {{$payments->status}}
                         </div>
-                      </div>
-
-                      <div class="col-md-4">
-                        <label>Agreement Attachment</label>
-                        <div class="col-xs-4">
-                          {{$payments->agreement_attachment}}
                         </div>
-                      </div>
-                    </div>&nbsp;
+                      </div>&nbsp;
 
-                          <div class="row">
-                      <div class="col-md-4">
-                        <label>Payment Method Used</label>
-                        <div class="col-xs-4">
+                      <div class="col-md-12">
+                        <h5><b>Buyer Information</b></h5>
+                      </div>
+
+                      <div class="col-md-6">
+                       <div class="row">
+                          <label class="col-sm-3"><b>Buyer Name</b></label>
+                        <div class="col-sm-4">
+                          {{$payments->user->name}}
+                        </div>
+                       </div>
+                      </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-5"><b>Payment Method Used</b></label>
+                        <div class="col-sm-6">
                           {{$payments->method}}
                         </div>
-                      </div>
-
-                      <div class="col-md-4">
-                        <label>Customer Account</label>
-                        <div class="col-xs-4">
-                          {{$payments->account}}
                         </div>
                       </div>
 
-                      <div class="col-md-4">
-                        <label>Amount Payed</label>
-                        <div class="col-xs-4">
-                          {{$payments->cash}}
-                        </div>
-                      </div>
-                    </div>&nbsp;
-
+                    <div class="col-md-6">
                         <div class="row">
-                      <div class="col-md-4">
-                        <label>Number Of Installments</label>
-                        <div class="col-xs-4">
+                          <label class="col-sm-5"><b>Number Of Installments</b></label>
+                        <div class="col-sm-6">
                           {{$payments->number_of_installments}}
                         </div>
                       </div>
-
-                      <div class="col-md-4">
-                        <label>Receipt Attachment</label>
-                        <div class="col-xs-4">
-                          {{$payments->receipt_attachment}}
                         </div>
-                      </div>
+                    </div>
 
-                      <!-- <div class="col-md-4">
-                        <label></label>
-                        <div class="col-xs-4">
-                          {{$payments->cash}}
-                        </div>
-                      </div> -->
-                      <hr>
-                    </div> 
                      <div class="card-footer">
                   <div class="col-md-12">
                       <div class="row">
@@ -109,8 +135,35 @@
         </div>
       </div>
     </div>
-     
     </div>
+
+
+   <div class="card">
+      <div class="card-header">
+        Attachments
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+                        <label>Agreement Attachment</label>
+                        <div class="col-xs-6">
+                          {{$payments->agreement_attachment}}
+                        </div>
+                      </div>
+          <div class="col-md-6">
+
+                        <label>Receipt Attachment</label>
+                        <div class="col-xs-6">
+                          {{$payments->receipt_attachment}}
+                        </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
      <div class="card">
        <div class="card-body">
           <div class="row">

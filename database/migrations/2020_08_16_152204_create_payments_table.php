@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('customer')->nullable();
             $table->text('status')->nullable();
-            $table->time('date')->nullable();
+            $table->dateTime('date')->nullable();
             $table->text('method')->nullable();
             $table->text('number_of_installments')->nullable();
             $table->text('cash')->nullable();
@@ -36,6 +36,9 @@ class CreatePaymentsTable extends Migration
             $table->text('region')->nullable();
             $table->text('district')->nullable();
             $table->text('street')->nullable();
+            $table->text('agreed')->nullable();
+            $table->text('paid')->nullable();
+            $table->dateTime('next_pay')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

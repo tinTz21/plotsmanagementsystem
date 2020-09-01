@@ -34,20 +34,7 @@
         <input type="hidden" name="street" value="{{$plot->street}}">
       <div class="modal-body">
         <div class="row">
-<!--           <div class="col-md-12">
-            <label>Select Customer</label>
-            <select class="form-control" name="customer">
-              <option>Select Customer</option>
-               @foreach($customer as $customer)
 
-               @if($customer->customer)
-               <option  value="{{$customer->name}}">
-               {{$customer->name}}
-               </option>
-               @endif
-               @endforeach
-          </select>
-          </div> -->
           <div class="col-md-12 text-center">
             <label><b>Customer Details</b></label>
           </div>
