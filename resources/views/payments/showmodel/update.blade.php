@@ -15,69 +15,7 @@
       </div>
       <div class="modal-body">
        <div class="row">
-         <div class="col-md-12">
-                        <div class="row">
-                          <div class="col-md-10">
-                            
-                          </div>
-                          <div class="col-md-2">
-                            @include('payments.showmodel.update')
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <h5><b>Payment</b></h5>
-                      </div>
-                      <div class="col-md-6">
-                       <div class="row">&nbsp;
-                          <label class="col-sm-3"><b>Agreed Price</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->agreed}}
-                        </div>
-                       </div>
-                      </div>
-                      <div class="col-md-6">
-                       <div class="row">
-                          <label class="col-sm-3"><b>Amount Paid</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->paid}}
-                        </div>
-                       </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label class="col-sm-3"><b>Amount Due</b></label>
-                        <div class="col-sm-7">
-                          {{ ((int)$payments['agreed'] - (int)$payments['paid'])}} Tsh
-                        </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label class="col-sm-3"><b>Next Payment</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->next_pay}}
-                        </div>
-                        </div>
-                      </div>
-
-                       <div class="col-md-6">
-                       <div class="row">
-                          <label class="col-sm-5"><b>First Payment Issued On</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->created_at}}
-                        </div>
-                       </div>
-                      </div>
-
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label class="col-sm-4"><b>Payment Status</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->status}}
-                        </div>
-                        </div>
-                      </div>
+         Changes on progress
        </div>
       </div>
       <div class="modal-footer">
