@@ -39,7 +39,7 @@
                       </div>
                       <div class="col-md-6">
                        <div class="row">
-                          <label class="col-sm-3"><b>Amount Paid</b></label>
+                          <label class="col-sm-4"><b>Total Amount Paid</b></label>
                         <div class="col-sm-7">
                           {{$payments->paid}}
                         </div>
@@ -110,6 +110,37 @@
                         </div>
                       </div>
                         </div>
+
+                  <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-3"><b>ID Details</b></label>
+                        <div class="col-sm-6">
+                          {{$payments->user->identification}}, #:{{$payments->user->identification_number}}
+                        </div>
+                      </div>
+                        </div>
+                        @if($payments->user->email)
+                         <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-2"><b>Email</b></label>
+                        <div class="col-sm-6">
+                            {{$payments->user->email}}
+                        </div>
+                      </div>
+                        </div>
+                        @endif
+                        @if($payments->user->phone)
+                         <div class="col-md-6">
+                        <div class="row">
+                          <label class="col-sm-3"><b>Phone</b></label>
+                        <div class="col-sm-6">
+                            {{$payments->user->phone}}
+                        </div>
+                      </div>
+                        </div>
+                        @endif
+
+
                     </div>
 
                      <div class="card-footer">

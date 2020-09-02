@@ -103,9 +103,9 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment)
+    public function edit(Payment $payment,$id)
     {
-        //
+        
     }
 
     /**
@@ -115,9 +115,11 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, $id)
     {
-        //
+        $payments=Payment::find($id);
+        $payments->update($request->all());
+        return redirect()->route('payments.show',$id);
     }
 
     /**
