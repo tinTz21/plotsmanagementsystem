@@ -13,11 +13,10 @@
         <h4 class="card-title">Register New Plot</h4>
       </div>
       <div class="card-body">
-        {!! Form::open(array('url' => 'create-plot','method'=>'POST')) !!}
+        {!! Form::open(array('url' => 'create-plot','method'=>'POST','enctype'=>'multipart/form-data')) !!}
         <div class="row">
 
           
-
           <div class="col-md-4">
             <label> Plot Number</label>
             <div class="col-xs-4">
@@ -133,7 +132,7 @@
 
             <div class="col-md-4">
               <label>Survey Attachment</label>
-              <input type="file" name="attachment">
+              <input type="file" name="attachment" class="form-control">
             </div>
             <div class="col-md-4">
               <label>Add Geo-Cordinate</label>
@@ -150,13 +149,18 @@
            <div class="col-md-12">
              <div class="row">
 
+              <div class="col-md-6">
+              <label>Due Diligence Info</label>
+              <input type="file" name="diligencef" class="form-control">
+            </div>
+<!-- 
                 <div class="col-md-6">
               <label>Plot Status</label>
               <input type="text" name="status" class="form-control">
-            </div>
+            </div> -->
             <div class="col-md-6">
               <label>Plot's Photo</label>
-              <input type="file" name="" class="form-control">
+              <input type="file" name="photof" class="form-control">
             </div>
              </div>
 
@@ -167,20 +171,15 @@
 
                 <div class="col-md-6">
               <label>Historical Document</label>
-              <input type="file" name="status" class="form-control">
+              <input type="file" name="historicalf" class="form-control">
             </div>
             <div class="col-md-6">
               <label>Purchase Agreement</label>
-              <input type="file" name="" class="form-control">
+              <input type="file" name="purchasesf" class="form-control">
             </div>
              </div>
 &nbsp;
            </div>
-           
-           <div class="col-md-6">
-              <label>Due Diligence Info</label>
-              <input type="file" name="" class="form-control">
-            </div>
              </div>
 
             <div class="col-md-12">

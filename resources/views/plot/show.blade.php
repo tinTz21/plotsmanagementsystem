@@ -98,9 +98,6 @@
 					<h4>Attachments</h4>
 					<div class="row">
 						<div class="col-md-3">
-							<b>Download Survey Attachment: </b>{{$plot->attachment }}
-						</div>
-						<div class="col-md-3">
 							<b>Geo-Cordinate: </b>{{$plot->positions }}
 						</div>
 						<div class="col-md-3">
@@ -124,6 +121,56 @@
 					Updated At: {{$plot->updated_at}}
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-header">
+			<h3>Attachments</h3>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-6">&nbsp;
+					 @if($plot->attachment)
+		                <p1>
+		                    <x2> <a href="{{ url($plot->attachment) }}" target="_blank"> <i class="fa fa-download"></i> Download Survey document </a> 
+		                </p1>
+		            @endif&nbsp;
+				</div>
+
+				<div class="col-md-6">
+					 @if($plot->diligencef)
+		                <p1>
+		                    <x2> <a href="{{ url($plot->diligencef) }}" target="_blank"> <i class="fa fa-download"></i> Download Due Diligence Info </a> 
+		                </p1>
+		            @endif&nbsp;
+				</div>
+
+				<div class="col-md-6">&nbsp;
+					 @if($plot->photof)
+		                <p1>
+		                    <x2> <a href="{{ url($plot->photof) }}" target="_blank"> <i class="fa fa-download"></i> Download Plot's photo </a> 
+		                </p1>
+		            @endif&nbsp;
+				</div>
+
+				<div class="col-md-6">&nbsp;
+					 @if($plot->historicalf)
+		                <p1>
+		                    <x2> <a href="{{ url($plot->historicalf) }}" target="_blank"> <i class="fa fa-download"></i> Download Historical Attachment </a> 
+		                </p1>
+		            @endif&nbsp;
+				</div>
+
+				<div class="col-md-6">
+					 @if($plot->purchasesf)
+		                <p1>
+		                    <x2> <a href="{{ url($plot->purchasesf) }}" target="_blank"> <i class="fa fa-download"></i> Download Purchases Attachment </a> 
+		                </p1>
+		            @endif&nbsp;
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>

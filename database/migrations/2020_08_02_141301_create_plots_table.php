@@ -36,6 +36,10 @@ class CreatePlotsTable extends Migration
             $table->text('positions')->nullable();
             $table->text('map')->nullable();
             $table->text('status')->nullable();
+            $table->text('diligencef')->nullable();
+            $table->text('photof')->nullable();
+            $table->text('historicalf')->nullable();
+            $table->text('purchasesf')->nullable();
             $table->timestamps();
         });
     }

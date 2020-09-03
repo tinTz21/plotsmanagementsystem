@@ -175,20 +175,21 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-md-6">
-                        <label>Agreement Attachment</label>
-                        <div class="col-xs-6">
-                          {{$payments->agreement_attachment}}
-                        </div>
-                      </div>
-          <div class="col-md-6">
+         <div class="col-md-6">&nbsp;
+           @if($payments->agreement_attachment)
+                    <p1>
+                        <x2> <a href="{{ url($payments->agreement_attachment) }}" target="_blank"> <i class="fa fa-download"></i> Download Aagreement Attachment  </a> 
+                    </p1>
+                @endif&nbsp;
+        </div>
 
-                        <label>Receipt Attachment</label>
-                        <div class="col-xs-6">
-                          {{$payments->receipt_attachment}}
-                        </div>
-
-          </div>
+          <div class="col-md-6">&nbsp;
+           @if($payments->receipt_attachment)
+                    <p1>
+                        <x2> <a href="{{ url($payments->receipt_attachment) }}" target="_blank"> <i class="fa fa-download"></i> Download receipt attachment  </a> 
+                    </p1>
+                @endif&nbsp;
+        </div>
         </div>
       </div>
     </div>

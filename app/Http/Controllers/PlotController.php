@@ -38,7 +38,79 @@ class PlotController extends Controller
      */
     public function store(Request $request)
     {
-            Plot::create($request->all());
+
+            $plot=new Plot();
+            $plot->user_id=\Auth::user()->id;
+            $plot->plot_number=$request->get('plot_number');
+            $plot->text=$request->get('text');
+            $plot->block_number=$request->get('block_number');
+            $plot->plot_size=$request->get('plot_size');
+            $plot->description=$request->get('description');
+            $plot->country=$request->get('country');
+            $plot->region=$request->get('region');
+            $plot->district=$request->get('district');
+            $plot->street=$request->get('street');
+            $plot->tanroad_distance=$request->get('tanroad_distance');
+            $plot->tt_drawing=$request->get('tt_drawing');
+            $plot->survey_number=$request->get('survey_number');
+            $plot->north_width=$request->get('north_width');
+            $plot->west_width=$request->get('west_width');
+            $plot->south_width=$request->get('south_width');
+            $plot->east_width=$request->get('east_width');
+            $plot->positions=$request->get('positions');
+            $plot->map=$request->get('map');
+            $plot->status=$request->get('status');
+
+            $file = $request->file('attachment');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('attachment')->move($path, $filename);
+                if ($upload) {
+                    $plot->attachment = $path . $filename;
+                }
+            } 
+            
+             $file = $request->file('diligencef');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('diligencef')->move($path, $filename);
+                if ($upload) {
+                    $plot->diligencef = $path . $filename;
+                }
+            } 
+
+             $file = $request->file('photof');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('photof')->move($path, $filename);
+                if ($upload) {
+                    $plot->photof = $path . $filename;
+                }
+            } 
+
+             $file = $request->file('historicalf');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('historicalf')->move($path, $filename);
+                if ($upload) {
+                    $plot->historicalf = $path . $filename;
+                }
+            } 
+
+            $file = $request->file('purchasesf');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('purchasesf')->move($path, $filename);
+                if ($upload) {
+                    $plot->purchasesf = $path . $filename;
+                }
+            } 
+            $plot->save();
             return redirect('plot')->with('success','Plot Created Successfully!');
         }
 

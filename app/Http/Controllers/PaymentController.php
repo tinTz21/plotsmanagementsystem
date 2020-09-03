@@ -56,31 +56,51 @@ class PaymentController extends Controller
 
 
 
-        $customer=new Payment([
-            'status' => $request->get('status'),
-            'date'=>$request->get('date'),
-            'method' => $request->get('method'), 
-            'number_of_installments' => $request->get('number_of_installments'), 
-            'cash'=>$request->get('cash'), 
-            'account'=>$request->get('account'), 
-            'unpayed' => $request->get('unpayed'),
-            'agreement_attachment' => $request->get('agreement_attachment'), 
-            'receipt_attachment' => $request->get('receipt_attachment'), 
-            'size' => $request->get('size'), 
-            'plot' => $request->get('plot'),
-            'block' =>$request->get('block'),
-            'geo' =>$request->get('geo'),
-            'tp' =>$request->get('tp'),
-            'country' =>$request->get('country'),
-            'region' =>$request->get('region'),
-            'district' =>$request->get('district'),
-            'street' =>$request->get('street'),
-            'customer'=>$request->get('customer'), 
-            'agreed' => $request->get('agreed'),
-            'paid' => $request->get('paid'),
-            'next_pay' => $request->get('next_pay'),
-         ]);
-        $customer->user_id = $user->id;
+        $customer=new Payment();
+
+            $customer->status = $request->get('status');
+            $customer->date=$request->get('date');
+            $customer->method = $request->get('method');
+            $customer->number_of_installments = $request->get('number_of_installments');
+            $customer->cash=$request->get('cash'); 
+            $customer->account=$request->get('account'); 
+            $customer->unpayed = $request->get('unpayed');
+            $customer->size = $request->get('size'); 
+            $customer->plot = $request->get('plot');
+            $customer->block =$request->get('block');
+            $customer->geo =$request->get('geo');
+            $customer->tp =$request->get('tp');
+            $customer->country =$request->get('country');
+            $customer->region =$request->get('region');
+            $customer->district =$request->get('district');
+            $customer->street =$request->get('street');
+            $customer->customer=$request->get('customer'); 
+            $customer->agreed = $request->get('agreed');
+            $customer->paid = $request->get('paid');
+            $customer->next_pay = $request->get('next_pay');
+             $customer->user_id = $user->id;
+         $file = $request->file('agreement_attachment');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('agreement_attachment')->move($path, $filename);
+                if ($upload) {
+                    $customer->agreement_attachment = $path . $filename;
+                }
+            } 
+
+
+             $file = $request->file('receipt_attachment');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('receipt_attachment')->move($path, $filename);
+                if ($upload) {
+                    $customer->receipt_attachment = $path . $filename;
+                }
+            } 
+
+       
         $customer->save();
         return redirect()->route('payments.index')->withStatus(__('customer successfully updated.'));
     }

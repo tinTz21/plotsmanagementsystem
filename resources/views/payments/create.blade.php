@@ -15,9 +15,7 @@
 		<div class="card-body">
 			<div class="row">
 				
-
-      <form method="POST" action="{{route('payments')}}">
-        @csrf
+        {!! Form::open(array('url' => 'payments','method'=>'POST','enctype'=>'multipart/form-data')) !!}
 
         <input type="hidden" name="customer" value="customer">
 
