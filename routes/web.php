@@ -79,6 +79,7 @@ Route::post('customer','CustomerController@store')->name('customer');
 Route::get('pages.table_list','CustomerController@index')->name('customer.index');
 Route::get('customer/show/{id}','CustomerController@show')->name('customer.show');
 Route::get('customer/delete/{id}','CustomerController@destroy');
+Route::post('customer/{id}','CustomerController@update')->name('customer.update');
 
 #Payments
 Route::get('payments/{id}','PaymentController@create')->name('payments.create');

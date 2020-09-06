@@ -162,7 +162,7 @@
 		            @endif&nbsp;
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6">&nbsp;
 					 @if($plot->purchasesf)
 		                <p1>
 		                    <x2> <a href="{{ url($plot->purchasesf) }}" target="_blank"> <i class="fa fa-download"></i> Download Purchases Attachment </a> 

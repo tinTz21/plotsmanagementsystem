@@ -40,28 +40,12 @@
 
                      <div class="row">
                       <div class="col-md-4">
-                        <label>Customer Type</label>
-                        <div class="col-xs-4">
-                          {{$customer->type}}
-                        </div>
-                      </div>
-
-                      <div class="col-md-4">
-                        <label>Registered Via</label>
+                        <label>ID Details</label>
                         <div class="col-xs-4">
                           {{$customer->identification}}, {{$customer->identification_number}}
                         </div>
                       </div>
-
-
-                      <!-- <div class="col-md-4">
-                        <label>Customer Phone</label>
-                        <div class="col-xs-4">
-                          {{$customer->phone}}
-                        </div>
-                      </div> -->
-                    </div>
-                      
+                    </div>      
         </div>
       </div>
     </div>
@@ -70,8 +54,15 @@
     <div class="col-md-6">
       <a href="{{route('customer.index')}}" class="btn btn-primary">Back</a>
     </div>
-    <div class="col-md-6 text-right">
-        @include('customers.delete')
+    <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            @include('customers.model.update')
+          </div>
+          <div class="col-md-6">
+            @include('customers.delete')
+          </div>
+        </div>
      
     </div>
   </div>

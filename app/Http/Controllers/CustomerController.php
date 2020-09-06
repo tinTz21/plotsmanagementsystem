@@ -87,7 +87,9 @@ public function store(Request $request){
      */
     public function update(Request $request, $id)
     {
-        //
+        $customer=User::findOrFail($id);
+        $customer->update($request->all());
+        return redirect()->route('customer.show',$id);
     }
 
     /**

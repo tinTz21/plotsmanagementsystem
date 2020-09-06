@@ -28,7 +28,7 @@
                           <th>
                            Amount Paid
                           </th>
-                          <th>Amount Due</th>
+                          <th>Due Amount</th>
                           <th>Next Payment</th>
                           <th>View</th>
                       </thead>
