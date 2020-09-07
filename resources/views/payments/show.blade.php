@@ -6,10 +6,13 @@
           <div class="card">
             <div class="row">
             <div class="col-md-12">
-              <div class="card">
+
+              <div class="row">
+                <div class="col-md-8">
+                                <div class="card">
                 
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title"><b>{{$payments->country}}, {{$payments->region}}, {{$payments->district}}, {{$payments->street}}&nbsp;&nbsp;</b><b>Block Number: </b> {{$payments->block}}, <b>Plot Number: </b>&nbsp;&nbsp;{{$payments->plot}}  </h4>
+                  <h4 class="card-title"><b>{{$payments->country}}, {{$payments->region}}, {{$payments->district}}, {{$payments->street}}&nbsp;&nbsp;</b><b>Block Number: </b> {{$payments->block}}, <b>Plot Number: </b>&nbsp;{{$payments->plot}}  </h4>
                 </div>
                 
                   <div class="card-body">
@@ -29,49 +32,42 @@
                       <div class="col-md-12">
                         <h5><b>Payment</b></h5>
                       </div>
-                      <div class="col-md-6">
-                       <div class="row">&nbsp;
+                      <div class="col-md-12">
+                       <div class="row">
                           <label class="col-sm-3"><b>Agreed Price</b></label>
-                        <div class="col-sm-7">
+                        <div class="col-sm-8">
                           {{$payments->agreed}}
                         </div>
                        </div>
                       </div>
-                      <div class="col-md-6">
+
+                      <div class="col-md-12">
                        <div class="row">
                           <label class="col-sm-4"><b>Total Amount Paid</b></label>
-                        <div class="col-sm-7">
+                        <div class="col-sm-8">
                           {{$payments->paid}}
                         </div>
                        </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="row">
                           <label class="col-sm-3"><b>Amount Due</b></label>
-                        <div class="col-sm-7">
+                        <div class="col-sm-9">
                           {{ ((int)$payments['agreed'] - (int)$payments['paid'])}} Tsh
                         </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="row">
-                          <label class="col-sm-3"><b>Next Payment</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->next_pay}}
-                        </div>
-                        </div>
-                      </div>
 
-                       <div class="col-md-6">
+                       <div class="col-md-12">
                        <div class="row">
-                          <label class="col-sm-5"><b>First Payment Issued On</b></label>
+                          <label class="col-sm-4"><b>First Payment Issued On</b></label>
                         <div class="col-sm-7">
                           {{$payments->created_at}}
                         </div>
                        </div>
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="row">
                           <label class="col-sm-4"><b>Payment Status</b></label>
                         <div class="col-sm-7">
@@ -84,7 +80,7 @@
                         <h5><b>Buyer Information</b></h5>
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                        <div class="row">
                           <label class="col-sm-3"><b>Buyer Name</b></label>
                         <div class="col-sm-4">
@@ -93,16 +89,16 @@
                        </div>
                       </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="row">
-                          <label class="col-sm-5"><b>Payment Method Used</b></label>
-                        <div class="col-sm-6">
+                          <label class="col-sm-4"><b>Payment Method Used</b></label>
+                        <div class="col-sm-8">
                           {{$payments->method}}
                         </div>
                         </div>
                       </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="row">
                           <label class="col-sm-5"><b>Number Of Installments</b></label>
                         <div class="col-sm-6">
@@ -111,7 +107,7 @@
                       </div>
                         </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                         <div class="row">
                           <label class="col-sm-3"><b>ID Details</b></label>
                         <div class="col-sm-6">
@@ -120,14 +116,14 @@
                       </div>
                         </div>
                         @if($payments->user->email)
-                         <div class="col-md-6">
+                         <div class="col-md-12">
                         <div class="row">
                           <label class="col-sm-2"><b>Email</b></label>
                         <div class="col-sm-6">
                             {{$payments->user->email}}
                         </div>
                       </div>
-                        </div>
+                        </div><hr>
                         @endif
                         @if($payments->user->phone)
                          <div class="col-md-6">
@@ -139,9 +135,10 @@
                       </div>
                         </div>
                         @endif
-
-
                     </div>
+
+
+
 
                      <div class="card-footer">
                   <div class="col-md-12">
@@ -164,6 +161,18 @@
                 </div>  
 
         </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      Installment Payments Management
+                    </div>
+                    <div class="card-body">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
       </div>
     </div>
     </div>
