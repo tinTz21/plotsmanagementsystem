@@ -109,18 +109,19 @@
         		<div class="col-md-6">
         			<label>Amount Paid</label>
         			<div class="col-xs-6">
-        				<input type="text" name="paid" class="form-control" placeholder="e.g. 100,000/=Tsh">
+        				<input type="text" name="next_amount" class="form-control" placeholder="e.g. 100,000/=Tsh">
         			</div>
         		</div>
         	</div>
         </div>
-&nbsp;
+        &nbsp;
+        
            <div class="col-md-12">
         	<div class="row">
         		<div class="col-md-6">
         			<label>Next Payment On</label>
         			<div class="col-xs-6">
-        				<input type="date" name="next_pay" class="form-control">
+        				<input type="date" name="next_date" class="form-control">
         			</div>
         		</div>
         		<div class="col-md-6">
@@ -131,8 +132,7 @@
         		</div>
         	</div>
         </div>
-
-          &nbsp;
+        &nbsp;
 
      <div class="col-md-12">
      	<div class="row">

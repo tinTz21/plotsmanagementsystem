@@ -17,6 +17,11 @@
       <form method="POST" action="/payments/edit/{{$payments->id}}">
         @csrf
          <div class="row">
+          <div class="col-md-12">
+          <label >Agreed Amount</label>
+           <input type="text" name="agreed" value="{{$payments->agreed}}" class="form-control">
+         </div>
+
          <div class="col-md-12">
           <label >Total Amount Paid</label>
            <input type="text" name="paid" value="{{$payments->paid}}" class="form-control">
