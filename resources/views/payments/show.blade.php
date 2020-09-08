@@ -6,23 +6,17 @@
           <div class="card">
             <div class="row">
             <div class="col-md-12">
-
               <div class="row">
                 <div class="col-md-8">
-                                <div class="card">
-                
+                  <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title"><b>{{$payments->country}}, {{$payments->region}}, {{$payments->district}}, {{$payments->street}}&nbsp;&nbsp;</b><b>Block Number: </b> {{$payments->block}}, <b>Plot Number: </b>&nbsp;{{$payments->plot}}  </h4>
-                </div>
-                
+                </div>                
                   <div class="card-body">
-
-                    <div class="row">
-                      
+                    <div class="row">                     
                       <div class="col-md-12">
                         <div class="row">
-                          <div class="col-md-10">
-                            
+                          <div class="col-md-10">                          
                           </div>
                           <div class="col-md-2">
                             @include('payments.showmodel.update')
@@ -168,7 +162,26 @@
                       Installment Payments Management
                     </div>
                     <div class="card-body">
-                      
+                      <div class="row">
+                        <div class="col-md-12">
+                          @include('payments.showmodel.create')
+                        </div>
+                       <div class="col-md-12">
+                          <label>NEXT PAYMENT IS AT: </label>
+                       </div>
+                      </div>
+                      @foreach($payment as $payment)
+                      Date: {{date('d-m-Y', strtotime($payment->next_date))}}<br>
+                      Promised Amount: {{$payment->next_amount}} Tsh<br>
+                      Payment Status: {{$payment->payment_status}}<br>
+                      @if($payment->receipt)
+                        Download
+                      @endif
+                      <br>
+                      Payed via {{$payment->account}}<br>
+                      @include('payments.showmodel.edit')
+                      @endforeach
+
                     </div>
                   </div>
                 </div>

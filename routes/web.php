@@ -88,4 +88,8 @@ Route::get('payments','PaymentController@index')->name('payments.index');
 Route::get('payments/show/{id}','PaymentController@show')->name('payments.show');
 Route::get('payments/delete/{id}','PaymentController@destroy');
 Route::post('/payments/edit/{id}','PaymentController@update');
+Route::post('payments/{id}','PaymentController@installment')->name('installment');
+
+#Installments
+Route::post('installment/edit/{id}','InstallmentController@edit');
 

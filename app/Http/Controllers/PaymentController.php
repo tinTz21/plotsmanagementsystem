@@ -62,7 +62,6 @@ class PaymentController extends Controller
                 $customer->method = $request->get('method');
                 $customer->number_of_installments = $request->get('number_of_installments');
                 $customer->cash=$request->get('cash'); 
-                // $customer->account=$request->get('account'); 
                 $customer->unpayed = $request->get('unpayed');
                 $customer->size = $request->get('size'); 
                 $customer->plot = $request->get('plot');
@@ -75,10 +74,7 @@ class PaymentController extends Controller
                 $customer->street =$request->get('street');
                 $customer->customer=$request->get('customer'); 
                 $customer->agreed = $request->get('agreed');
-                // $customer->paid = $request->get('paid');
-                // $customer->next_pay = $request->get('next_pay');
                 $customer->user_id = $user->id;
-
                 $file = $request->file('agreement_attachment');
                 if ($file) {
                     $path = 'files/';
@@ -88,10 +84,35 @@ class PaymentController extends Controller
                         $customer->agreement_attachment = $path . $filename;
                     }
                 }     
-
                 $customer->save();
   
                 $payment=new Installment();
+                $payment->payment_id=$customer->id;
+                $payment->next_date=$request->get('next_date');
+                $payment->next_amount=$request->get('next_amount');
+                $payment->payment_status=$request->get('payment_status');
+                $payment->account=$request->get('account');
+                $payment->receipt=$request->get('receipt');
+
+                $file = $request->file('receipt');
+                    if ($file) {
+                        $path = 'files/';
+                        $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                        $upload = $request->file('receipt')->move($path, $filename);
+                        if ($upload) {
+                            $payment->receipt = $path . $filename;
+                        }
+                    } 
+                $payment->save();
+       
+            
+            return redirect()->route('payments.index')->withStatus(__('customer successfully updated.'));
+    }
+
+
+    public function installment($id){
+
+        $payment=new Installment($id);
                 $payment->payment_id=$customer->id;
                 $payment->next_date=$request->get('next_date');
                 $payment->next_amount=$request->get('next_amount');
@@ -122,8 +143,9 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
+        $payment=Installment::all();
         $payments=Payment::find($id);
-        return view('payments.show',compact('payments'));
+        return view('payments.show')->with(compact(['payments',$payments,'payment',$payment]));
     }
 
     /**
