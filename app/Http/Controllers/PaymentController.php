@@ -92,7 +92,6 @@ class PaymentController extends Controller
                 $payment->next_amount=$request->get('next_amount');
                 $payment->payment_status=$request->get('payment_status');
                 $payment->account=$request->get('account');
-                $payment->receipt=$request->get('receipt');
 
                 $file = $request->file('receipt');
                     if ($file) {
@@ -110,10 +109,10 @@ class PaymentController extends Controller
     }
 
 
-    public function installment($id){
+    public function installment(Request $request,$id){
 
-        $payment=new Installment($id);
-                $payment->payment_id=$customer->id;
+        $payment=new Installment;
+                $payment->payment_id=$request->get('payment_id');
                 $payment->next_date=$request->get('next_date');
                 $payment->next_amount=$request->get('next_amount');
                 $payment->payment_status=$request->get('payment_status');
@@ -143,9 +142,9 @@ class PaymentController extends Controller
      */
     public function show($id)
     {
-        $payment=Installment::all();
+        $installment=Installment::all();
         $payments=Payment::find($id);
-        return view('payments.show')->with(compact(['payments',$payments,'payment',$payment]));
+        return view('payments.show')->with(compact(['payments',$payments,'installment',$installment]));
     }
 
     /**
@@ -154,9 +153,10 @@ class PaymentController extends Controller
      * @param  \App\Payment  $payment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment $payment,$id)
-    {
-        
+    public function edit($id,Request $request){
+        $id=Installment::findorFail($id);
+        $id->update($request->all());
+        return $this->update($edit);
     }
 
     /**
@@ -170,6 +170,7 @@ class PaymentController extends Controller
     {
         $payments=Payment::find($id);
         $payments->update($request->all());
+        
         return redirect()->route('payments.show',$id);
     }
 

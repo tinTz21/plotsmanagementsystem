@@ -63,7 +63,7 @@
              <div class="row">
             <div class="col-md-6">
               <label>Date Of Birth</label>
-              <input type="text" name="yob" value="{{$customer->yob}}" class="form-control">
+              <input type="date" name="yob" value="{{$customer->yob}}" class="form-control">
             </div>
             <div class="col-md-6">
               <label>ID TYPE</label>
@@ -77,6 +77,9 @@
               <input type="text" name="identification_number" value="{{$customer->identification_number}}" class="form-control">
             </div>
           </div>
+
+         
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -91,5 +91,5 @@ Route::post('/payments/edit/{id}','PaymentController@update');
 Route::post('payments/{id}','PaymentController@installment')->name('installment');
 
 #Installments
-Route::post('installment/edit/{id}','InstallmentController@edit');
+Route::post('installment/update/{id}','InstallmentController@update')->name('_installment');
 

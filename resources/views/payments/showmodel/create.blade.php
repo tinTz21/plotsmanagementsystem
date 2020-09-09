@@ -16,9 +16,10 @@
       <div class="modal-body">
       <form method="POST" action="{{route('installment',$payments->id)}}">
         @csrf
+        <input type="hidden" name="payment_id" value="{{$payments->id}}">
          <div class="row">
           <div class="col-md-12">
-          <label >Adjust Date</label>
+          <label >Next Payment On: </label>
            <input type="date" name="next_date" value="" class="form-control">
          </div>
 

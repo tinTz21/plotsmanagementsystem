@@ -168,20 +168,25 @@
                         </div>
                        <div class="col-md-12">
                           <label>NEXT PAYMENT IS AT: </label>
+                          &nbsp;
                        </div>
                       </div>
-                      @foreach($payment as $payment)
-                      Date: {{date('d-m-Y', strtotime($payment->next_date))}}<br>
-                      Promised Amount: {{$payment->next_amount}} Tsh<br>
-                      Payment Status: {{$payment->payment_status}}<br>
-                      @if($payment->receipt)
-                        Download
-                      @endif
-                      <br>
-                      Payed via {{$payment->account}}<br>
-                      @include('payments.showmodel.edit')
-                      @endforeach
-
+                          @foreach($installment as $installment)
+                            @if($installment->payment_id ==$payments->id)
+                          Date: {{date('d-m-Y', strtotime($installment->next_date))}}<br>
+                          Promised Amount: {{$installment->next_amount}} Tsh<br>
+                          installment Status: {{$installment->installment_status}}<br>
+                          @if($installment->receipt)
+                          Receipt: <a href="{{url($installment->receipt)}}" target="_blank">Download</a>
+                          @endif
+                          <br>
+                          Payment Status: {{$installment->payment_status}}<br>
+                          Payed via {{$installment->account}}<br>
+                          @include('payments.showmodel.edit')
+                          &nbsp;
+                         @endif
+                          @endforeach
+                          &nbsp;
                     </div>
                   </div>
                 </div>
