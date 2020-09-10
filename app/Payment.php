@@ -13,6 +13,6 @@ class Payment extends Model
     }
 
     public function installment(){
-    	return $this->belongsTo(Installment::class);
+    	return $this->hasMany(Installment::class);
     }
 }

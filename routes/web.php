@@ -96,3 +96,6 @@ Route::get('installment/edit/{id}','InstallmentController@edit')->name('installm
 Route::get('installment/delete/{id}','InstallmentController@delete')->name('installment.delete_installment');
 Route::post('installment/destroy/{id}','InstallmentController@destroy')->name('installment.destroy');
 
+#Reminder
+Route::get('reminder','ReminderController@index')->name('reminder');
+Route::get('reminder/show/{id}','ReminderController@show')->name('reminder.show');

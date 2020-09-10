@@ -8,7 +8,7 @@ class Installment extends Model
 {
  protected $fillable=['payment_id','next_date','next_amount','payment_status','receipt','account'];
     public function payment(){
-    	return $this->hasMany(Payment::class);
+    	return $this->belongsTo(Payment::class);
     }
 
 
