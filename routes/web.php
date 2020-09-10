@@ -92,4 +92,7 @@ Route::post('payments/{id}','PaymentController@installment')->name('installment'
 
 #Installments
 Route::post('installment/update/{id}','InstallmentController@update')->name('_installment');
+Route::get('installment/edit/{id}','InstallmentController@edit')->name('installment.edit');
+Route::get('installment/delete/{id}','InstallmentController@delete')->name('installment.delete_installment');
+Route::post('installment/destroy/{id}','InstallmentController@destroy')->name('installment.destroy');
 

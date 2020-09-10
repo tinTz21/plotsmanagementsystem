@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'Bought Plot Payment Info', 'titlePage' => __('Typography')])
+@extends('layouts.app', ['activePage' => 'Bought Plot Payment Info2020', 'titlePage' => __('Typography')])
 
     @section('content')
       <div class="content">
@@ -168,11 +168,11 @@
                         </div>
                        <div class="col-md-12">
                           <label>NEXT PAYMENT IS AT: </label>
-                          &nbsp;
                        </div>
-                      </div>
-                          @foreach($installment as $installment)
-                            @if($installment->payment_id ==$payments->id)
+                       <div class="col-md-12">
+                          @foreach($installment as $installment)&nbsp;
+                            <div>
+                              @if($installment->payment_id ==$payments->id)
                           Date: {{date('d-m-Y', strtotime($installment->next_date))}}<br>
                           Promised Amount: {{$installment->next_amount}} Tsh<br>
                           installment Status: {{$installment->installment_status}}<br>
@@ -182,11 +182,16 @@
                           <br>
                           Payment Status: {{$installment->payment_status}}<br>
                           Payed via {{$installment->account}}<br>
-                          @include('payments.showmodel.edit')
+                          <a href="{{route('installment.edit',$installment->id)}}"><i class="fa fa-edit"></i></a>
+                          <a href="{{route('installment.delete_installment',$installment->id)}}"><i class="fa fa-trash"></i></a>
+                            </div>
                           &nbsp;
                          @endif
                           @endforeach
                           &nbsp;
+                       </div>
+
+                      </div>  
                     </div>
                   </div>
                 </div>
