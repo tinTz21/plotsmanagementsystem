@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
-
+use App\Installment;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $dashboard=Installment::all();
+        return view('dashboard',compact('dashboard'));
     }
 
     public function create(){

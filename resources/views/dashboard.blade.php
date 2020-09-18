@@ -79,36 +79,25 @@
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-primary">
-                      <th>Customer</th>
-                      <th>نام</th>
-                      <th>حقوق</th>
-                      <th>استان</th>
+                      <th>Property Name</th>
+                      <th>Customer Na</th>
+                      <th>Agreed Price</th>
+                      <th>Amount Paid</th>
+                      <th>Amount Due</th>
+                      <th>Next Payment</th>
                     </thead>
                     <tbody>
+                      @foreach($dashboard as $dashboard)
                       <tr>
                         <td>1</td>
-                        <td>احمد حسینی</td>
-                        <td>$36,738</td>
+                        <td>{{$dashboard->payment_status}}</td>
+                        <td>{{$dashboard->next_amount}} Tsh</td>
                         <td>مازندران</td>
+                        <td></td>
+                        <td>{{$dashboard->next_date}}</td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>مینا رضایی</td>
-                        <td>$23,789</td>
-                        <td>گلستان</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>مبینا احمدپور</td>
-                        <td>$56,142</td>
-                        <td>تهران</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>جلال آقایی</td>
-                        <td>$38,735</td>
-                        <td>شهرکرد</td>
-                      </tr>
+                      @endforeach
+
                     </tbody>
                   </table>
                 </div>
