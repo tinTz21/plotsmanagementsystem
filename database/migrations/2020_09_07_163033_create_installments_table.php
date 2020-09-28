@@ -16,6 +16,7 @@ class CreateInstallmentsTable extends Migration
         Schema::create('installments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('payment_id');
+             $table->unsignedBigInteger('user_id');
             $table->dateTime('next_date')->nullable();
             $table->text('next_amount')->nullable();
             $table->text('payment_status')->nullable();
@@ -26,6 +27,11 @@ class CreateInstallmentsTable extends Migration
             $table->foreign('payment_id')
             ->references('id')
             ->on('payments')
+            ->onDelete('cascade');
+
+             $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
             ->onDelete('cascade');
         });
     }

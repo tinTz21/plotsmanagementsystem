@@ -118,6 +118,7 @@ class PaymentController extends Controller
                 $payment->payment_status=$request->get('payment_status');
                 $payment->account=$request->get('account');
                 $payment->receipt=$request->get('receipt');
+                $payment->user_id=\Auth::user()->id;
 
                 $file = $request->file('receipt');
                     if ($file) {
