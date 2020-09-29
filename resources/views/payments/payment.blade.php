@@ -23,7 +23,7 @@
         @csrf
 
         <input type="hidden" name="customer" value="customer">
-
+        <input type="hidden" name="plot_id" value="{{$plot->id}}">
         <input type="hidden" name="plot" value="{{$plot->plot_number}}">
         <input type="hidden" name="block" value="{{$plot->plot_size}}">
         <input type="hidden" name="geo" value="{{$plot->positions }}">

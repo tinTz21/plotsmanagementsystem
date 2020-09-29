@@ -89,8 +89,8 @@
                     <tbody>
                       @foreach($dashboard as $dashboard)
                       <tr>
-                        <td>{{$dashboard->payment_id->status}}</td>
-                        <td>{{$dashboard->payment_status}}</td>
+                        <td>{{$dashboard->payment->id}}</td>
+                        <td>  {{$dashboard->payment->user->name}}</td>
                         <td>{{$dashboard->next_amount}} Tsh</td>
                         <td>مازندران</td>
                         <td></td>

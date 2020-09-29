@@ -75,6 +75,7 @@ class PaymentController extends Controller
                 $customer->customer=$request->get('customer'); 
                 $customer->agreed = $request->get('agreed');
                 $customer->user_id = $user->id;
+                $customer->plot_id=$request->get('plot_id');
                 $file = $request->file('agreement_attachment');
                 if ($file) {
                     $path = 'files/';
