@@ -17,5 +17,9 @@ class Installment extends Model
     	return $this->belongsTo(Payment::class);
     }
 
+    public function plot(){
+    	return $this->belongsTo(Plot::class);
+    }
+
 
 }

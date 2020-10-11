@@ -66,36 +66,36 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 #Manage Plot
-Route::get('plot','PlotController@index')->name('plot');
-Route::get('create-plot','PlotController@create')->name('create-plot');
-Route::post('create-plot','PlotController@store')->name('create-plot');
-Route::get('/plot/show/{id}','PlotController@show');
-Route::post('/delete/{id}','PlotController@destroy');
+Route::get('plot','PlotController@index')->name('plot')->middleware('auth');
+Route::get('create-plot','PlotController@create')->name('create-plot')->middleware('auth');
+Route::post('create-plot','PlotController@store')->name('create-plot')->middleware('auth');
+Route::get('/plot/show/{id}','PlotController@show')->name('plot.show')->middleware('auth');
+Route::post('/delete/{id}','PlotController@destroy')->middleware('auth');
 
 
 #Customer
 Route::get('create-customer','CustomerController@create')->name('create-customer');
-Route::post('customer','CustomerController@store')->name('customer');
-Route::get('pages.table_list','CustomerController@index')->name('customer.index');
-Route::get('customer/show/{id}','CustomerController@show')->name('customer.show');
-Route::get('customer/delete/{id}','CustomerController@destroy');
-Route::post('customer/{id}','CustomerController@update')->name('customer.update');
+Route::post('customer','CustomerController@store')->name('customer')->middleware('auth');
+Route::get('pages.table_list','CustomerController@index')->name('customer.index')->middleware('auth');
+Route::get('customer/show/{id}','CustomerController@show')->name('customer.show')->middleware('auth');
+Route::get('customer/delete/{id}','CustomerController@destroy')->middleware('auth');
+Route::post('customer/{id}','CustomerController@update')->name('customer.update')->middleware('auth');
 
 #Payments
-Route::get('payments/{id}','PaymentController@create')->name('payments.create');
-Route::post('payments','PaymentController@store')->name('payments');
-Route::get('payments','PaymentController@index')->name('payments.index');
+Route::get('payments/{id}','PaymentController@create')->name('payments.create')->middleware('auth');
+Route::post('payments','PaymentController@store')->name('payments')->middleware('auth');
+Route::get('payments','PaymentController@index')->name('payments.index')->middleware('auth');
 Route::get('payments/show/{id}','PaymentController@show')->name('payments.show');
-Route::get('payments/delete/{id}','PaymentController@destroy');
-Route::post('/payments/edit/{id}','PaymentController@update');
-Route::post('payments/{id}','PaymentController@installment')->name('installment');
+Route::get('payments/delete/{id}','PaymentController@destroy')->middleware('auth');
+Route::post('/payments/edit/{id}','PaymentController@update')->middleware('auth');
+Route::post('payments/{id}','PaymentController@installment')->name('installment')->middleware('auth');
 
 #Installments
-Route::post('installment/update/{id}','InstallmentController@update')->name('_installment');
-Route::get('installment/edit/{id}','InstallmentController@edit')->name('installment.edit');
-Route::get('installment/delete/{id}','InstallmentController@delete')->name('installment.delete_installment');
-Route::post('installment/destroy/{id}','InstallmentController@destroy')->name('installment.destroy');
+Route::post('installment/update/{id}','InstallmentController@update')->name('_installment')->middleware('auth');
+Route::get('installment/edit/{id}','InstallmentController@edit')->name('installment.edit')->middleware('auth');
+Route::get('installment/delete/{id}','InstallmentController@delete')->name('installment.delete_installment')->middleware('auth');
+Route::post('installment/destroy/{id}','InstallmentController@destroy')->name('installment.destroy')->middleware('auth');
 
 #Reminder
-Route::get('reminder','ReminderController@index')->name('reminder');
-Route::get('reminder/show/{id}','ReminderController@show')->name('reminder.show');
+Route::get('reminder','ReminderController@index')->name('reminder')->middleware('auth');
+Route::get('reminder/show/{id}','ReminderController@show')->name('reminder.show')->middleware('auth');

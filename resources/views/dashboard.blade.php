@@ -89,10 +89,14 @@
                     <tbody>
                       @foreach($dashboard as $dashboard)
                       <tr>
-                        <td>{{$dashboard->payment->id}}</td>
-                        <td>  {{$dashboard->payment->user->name}}</td>
+                        <td>
+                          <a href="{{route('plot.show',$dashboard->plot->id)}}">
+                            {{$dashboard->plot->region}}, Plot# {{$dashboard->plot->plot_number}}. Block #{{$dashboard->plot->block_number}}
+                          </a>
+                        </td>
+                        <td> <a href="{{route('customer.show',$dashboard->payment->user->id)}}">{{$dashboard->payment->user->name}}</a> </td>
                         <td>{{$dashboard->next_amount}} Tsh</td>
-                        <td>مازندران</td>
+                        <td>{{$dashboard->payment->cash}}</td>
                         <td></td>
                         <td>{{$dashboard->next_date}}</td>
                       </tr>

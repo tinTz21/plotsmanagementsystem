@@ -42,7 +42,6 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-
                 $user=new User;
                 $user->name=$request->get('name');
                 $user->email=$request->get('email');
@@ -87,7 +86,10 @@ class PaymentController extends Controller
                 }     
                 $customer->save();
   
+
                 $payment=new Installment();
+                $payment->plot_id=$request->get('plot_id');
+                $payment->user_id = $user->id;
                 $payment->payment_id=$customer->id;
                 $payment->next_date=$request->get('next_date');
                 $payment->next_amount=$request->get('next_amount');
@@ -111,15 +113,14 @@ class PaymentController extends Controller
 
 
     public function installment(Request $request,$id){
-
-        $payment=new Installment;
-                $payment->payment_id=$request->get('payment_id');
+        $payment=new Installment();
+                // $payment->plot_id=$request->get('plot_id');
+                $payment->user_id = \Auth::user()->id;
+                $payment->payment_id=$id;
                 $payment->next_date=$request->get('next_date');
                 $payment->next_amount=$request->get('next_amount');
                 $payment->payment_status=$request->get('payment_status');
                 $payment->account=$request->get('account');
-                $payment->receipt=$request->get('receipt');
-                $payment->user_id=\Auth::user()->id;
 
                 $file = $request->file('receipt');
                     if ($file) {

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'Bought Plot Payment Info2020', 'titlePage' => __('Typography')])
+@extends('layouts.app', ['activePage' => 'Bought Plot Payment Info', 'titlePage' => __('Typography')])
 
     @section('content')
       <div class="content">

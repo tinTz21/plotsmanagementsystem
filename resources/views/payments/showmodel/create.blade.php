@@ -14,6 +14,7 @@
         </button>
       </div>
       <div class="modal-body">
+        
       <form method="POST" action="{{route('installment',$payments->id)}}">
         @csrf
         <input type="hidden" name="payment_id" value="{{$payments->id}}">
