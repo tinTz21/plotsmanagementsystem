@@ -18,6 +18,7 @@
       <form method="POST" action="{{route('installment',$payments->id)}}">
         @csrf
         <input type="hidden" name="payment_id" value="{{$payments->id}}">
+        <input type="hidden" name="plot_id" value="{{$payments->plot_id}}">
          <div class="row">
           <div class="col-md-12">
           <label >Next Payment On: </label>

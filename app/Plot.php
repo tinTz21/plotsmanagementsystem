@@ -13,6 +13,10 @@ class Plot extends Model
     }
 
     public function installment(){
-    	return $this->hasMany(installment::class);
+    	return $this->hasMany(Installment::class);
+    }
+
+    public function plot(){
+    	return $this->hasMany(Plot::class);
     }
 }

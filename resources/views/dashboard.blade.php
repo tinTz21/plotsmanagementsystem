@@ -87,24 +87,26 @@
                       <th>Next Payment</th>
                     </thead>
                     <tbody>
-                      @foreach($dashboard as $dashboard)
+                      @foreach($dashboard as $dashboards)
                       <tr>
                         <td>
-                          <a href="{{route('plot.show',$dashboard->plot->id)}}">
-                            {{$dashboard->plot->region}}, Plot# {{$dashboard->plot->plot_number}}. Block #{{$dashboard->plot->block_number}}
+                          <a href="{{route('plot.show',$dashboards->plot->id)}}">
+                            {{$dashboards->plot->region}}, Plot# {{$dashboards->plot->plot_number}}. Block #{{$dashboards->plot->block_number}}
                           </a>
                         </td>
-                        <td> <a href="{{route('customer.show',$dashboard->payment->user->id)}}">{{$dashboard->payment->user->name}}</a> </td>
-                        <td>{{$dashboard->next_amount}} Tsh</td>
-                        <td>{{$dashboard->payment->cash}}</td>
+                        <td> <a href="{{route('customer.show',$dashboards->payment->user->id)}}">{{$dashboards->payment->user->name}}</a> </td>
+                        <td>{{$dashboards->payment->agreed}} Tsh</td>
+                        <td>{{$dashboards->payment->cash}}</td>
                         <td></td>
-                        <td>{{$dashboard->next_date}}</td>
+                        <td>{{$dashboards->next_date}}</td>
                       </tr>
                       @endforeach
+
 
                     </tbody>
                   </table>
                 </div>
+               {{ $dashboard->onEachSide(5)->links() }}
               </div>
         </div>
       </div>

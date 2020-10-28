@@ -15,4 +15,8 @@ class Payment extends Model
     public function installment(){
     	return $this->hasMany(Installment::class);
     }
+
+    public function plot(){
+    	return $this->belongsTo(Plot::class);
+    }
 }

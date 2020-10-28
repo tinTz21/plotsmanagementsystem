@@ -113,10 +113,12 @@ class PaymentController extends Controller
 
 
     public function installment(Request $request,$id){
+        
         $payment=new Installment();
-                // $payment->plot_id=$request->get('plot_id');
+               
                 $payment->user_id = \Auth::user()->id;
                 $payment->payment_id=$id;
+                $payment->plot_id=$request->get('plot_id');
                 $payment->next_date=$request->get('next_date');
                 $payment->next_amount=$request->get('next_amount');
                 $payment->payment_status=$request->get('payment_status');

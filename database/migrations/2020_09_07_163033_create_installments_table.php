@@ -16,7 +16,7 @@ class CreateInstallmentsTable extends Migration
         Schema::create('installments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('payment_id');
-            $table->unsignedBigInteger('plot_id');
+            $table->unsignedBigInteger('plot_id')->nullable();
              $table->unsignedBigInteger('user_id');
             $table->dateTime('next_date')->nullable();
             $table->text('next_amount')->nullable();
