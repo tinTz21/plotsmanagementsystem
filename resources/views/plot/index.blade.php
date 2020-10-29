@@ -82,22 +82,22 @@
     </div>
    
     	<div class="row">
-    @foreach($plot as $plot)
+    @foreach($plot as $plots)
     		<div class="col-md-6">
     			<div class="card text-center" >
-    				 <a href="{{url('plot/show',$plot->id)}}">
-		    		<div class="card-header card-header-info">{{$plot->country}},&nbsp; {{$plot->region}},&nbsp;&nbsp;&nbsp;{{$plot->district}}---{{$plot->street}}</div>
+    				 <a href="{{url('plot/show',$plots->id)}}">
+		    		<div class="card-header card-header-info">{{$plots->country}},&nbsp; {{$plots->region}},&nbsp;&nbsp;&nbsp;{{$plots->district}}---{{$plots->street}}</div>
 		    		<div class="card-body">
-		    		<h5>Plot Description</h5>
-		    		{{$plot->description}}
+		    		<h5>Plots Description</h5>
+		    		{{$plots->description}}
 		    		</div>
 		    		<div class="card-footer border-top border-info">
 		    			<div class="row">
 		    				<div class="col-md-6">
-		    					Created At: {{$plot->created_at}}
+		    					Created At: {{$plots->created_at}}
 		    				</div>
 		    				<div class="col-md-6 ">
-		    					Block Number:{{$plot->block_number}}
+		    					Block Number:{{$plots->block_number}}
 		    				</div>
 		    			</div>
 		    		</div>
@@ -106,6 +106,7 @@
     		</div>
     @endforeach
     </div>
+    {{ $plot->onEachSide(5)->links() }}
   </div>
 </div>
 @endsection

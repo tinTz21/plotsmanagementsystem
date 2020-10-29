@@ -96,7 +96,8 @@
                         </td>
                         <td> <a href="{{route('customer.show',$dashboards->payment->user->id)}}">{{$dashboards->payment->user->name}}</a> </td>
                         <td>{{$dashboards->payment->agreed}} Tsh</td>
-                        <td>{{$dashboards->payment->cash}}</td>
+                        
+                        <td>{{App\Installment::sum('next_amount')}}</td>
                         <td></td>
                         <td>{{$dashboards->next_date}}</td>
                       </tr>
@@ -112,10 +113,6 @@
       </div>
 
 
-
-
-
-
     </div>
   </div>
 @endsection
@@ -127,4 +124,3 @@
       md.initDashboardPageCharts();
     });
   </script>
-@endpush

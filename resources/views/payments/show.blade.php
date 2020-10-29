@@ -189,6 +189,14 @@
                          @endif
                           @endforeach
                           &nbsp;
+
+                          <div class="col-md-12">
+                           
+                           @if($payments->id==App\Installment::latest()->get('payment_id'))
+                              Total Amount Paid: {{App\Installment::sum('next_amount')}}
+                             @endif
+                            
+                          </div>
                        </div>
 
                       </div>  

@@ -14,7 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer=User::latest()->get();
+        $customer=User::latest()->simplePaginate(5);
         return view('customers.index',compact('customer'));
     }
 

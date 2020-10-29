@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $dashboard=Installment::paginate(3);
+        $dashboard=Installment::latest()->simplePaginate(5);
         return view('dashboard',compact('dashboard'));
     }
 

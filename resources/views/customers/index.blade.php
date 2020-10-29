@@ -42,27 +42,27 @@
                         </th>
                         <th>View</th>
                       </thead>
-                      @foreach($customer as $customer)
-                        @if($customer->customer)
+                      @foreach($customer as $customers)
+                        @if($customers->customer)
                             <tbody>
                               <tr>
                                 <td>
-                                  {{$customer->name}}
+                                  {{$customers->name}}
                                 </td>
                                 <td>
-                                  {{$customer->country}}
+                                  {{$customers->country}}
                                 </td>
                                 <td>
-                                  {{$customer->region}}
+                                  {{$customers->region}}
                                 </td>
                                 <td>
-                                  {{$customer->email}}
+                                  {{$customers->email}}
                                 </td>
                                 <td>
-                                  {{$customer->created_at}}
+                                  {{$customers->created_at}}
                                 </td>
                                 <td>
-                                  <a href="{{url('customer/show',$customer->id)}}"><i class="fa fa-eye fa-1x"></i></a>
+                                  <a href="{{url('customer/show',$customers->id)}}"><i class="fa fa-eye fa-1x"></i></a>
                                 </td>
                               </tr>
                             </tbody>
@@ -70,7 +70,10 @@
                     @endforeach
                           </table>
                         </div>
+
                       </div>
+
+                      {{$customer->OnEachSide(3)->links()}}
                       
         </div>
       </div>

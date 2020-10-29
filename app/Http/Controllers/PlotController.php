@@ -16,7 +16,7 @@ class PlotController extends Controller
      */
     public function index()
     {
-        $plot=Plot::latest()->get();
+        $plot=Plot::latest()->simplePaginate(4);
         return view('plot.index',compact(array('plot')));
     }
 
