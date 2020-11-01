@@ -81,7 +81,7 @@
                       <th>Property Name</th>
                       <th>Customer Na</th>
                       <th>Agreed Price</th>
-                      <th>View Amount summary</th>
+                      <th>Amount summary</th>
                       
                       <th>Next Payment</th>
                     </thead>
