@@ -10,7 +10,9 @@
 
 
 
-      <form method="POST" action="{{route('_installment',$installment->id)}}">
+            <div class="card">
+              <div class="card-body">
+                <form method="POST" action="{{route('_installment',$installment->id)}}">
         @csrf
         <input type="hidden" name="payment_id" value="{{$installment->payment_id}}">
          <div class="row">
@@ -54,9 +56,8 @@
       </form>
 
        </div>
-
-
-
+              </div>
+            </div>
 
 
 

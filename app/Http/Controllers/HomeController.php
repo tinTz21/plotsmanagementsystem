@@ -23,8 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $customer=User::all();
         $dashboard=Installment::latest()->simplePaginate(5);
-        return view('dashboard',compact('dashboard'));
+        return view('dashboard')->with(compact(['dashboard',$dashboard, 'customer',$customer]));
     }
 
     public function create(){

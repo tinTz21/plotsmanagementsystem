@@ -24,11 +24,6 @@
                           <th>
                             Agreed Price
                           </th>
-                          <th>
-                           Amount Paid
-                          </th>
-                          <th>Due Amount</th>
-                          <th>Next Payment</th>
                           <th>View</th>
                       </thead>
                         @foreach($payments as $payments)
@@ -43,15 +38,6 @@
                                 </td>
                                 <td>
                                   {{$payments->agreed}}
-                                </td>
-                                <td>
-                                  {{$payments->paid}}
-                                </td>
-                                <td>
-                                  {{ ((int)$payments['agreed'] - (int)$payments['paid'])}} Tsh
-                                </td>
-                                <td>
-                                  {{$payments->next_pay}}
                                 </td>
                                 <td>
                                   <a href="{{url('payments/show',$payments->id)}}"><i class="fa fa-eye"></i></a>

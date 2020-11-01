@@ -15,7 +15,7 @@
       </div>
       <div class="modal-body">
         
-      <form method="POST" action="{{route('installment',$payments->id)}}">
+      <form method="POST" action="{{route('installment',$payments->id)}}" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="payment_id" value="{{$payments->id}}">
         <input type="hidden" name="plot_id" value="{{$payments->plot_id}}">

@@ -18,9 +18,9 @@
                         <div class="row">
                           <div class="col-md-10">                          
                           </div>
-                          <div class="col-md-2">
-                            @include('payments.showmodel.update')
-                          </div>
+                          <!-- <div class="col-md-2">
+                            include('payments.showmodel.update')
+                          </div> -->
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -151,7 +151,7 @@
                 <div class="col-md-4">
                   <div class="card">
                     <div class="card-header card-header-primary">
-                      Installment Payments Management
+                      Installments Payment List
                     </div>
                     <div class="card-body">
                       <div class="row">
@@ -162,14 +162,16 @@
                           <label>NEXT PAYMENT IS AT: </label>
                        </div>
                        <div class="col-md-12">
-                          @foreach($installment as $installments)&nbsp;
+                          @foreach($installment as $installments)
                             <div>
                               @if($installments->payment_id ==$payments->id)
                           Date: {{date('d-m-Y', strtotime($installments->next_date))}}<br>
                           Promised Amount: {{$installments->next_amount}} Tsh<br>
                           installment Status: {{$installments->installment_status}}<br>
                           @if($installments->receipt)
-                          Receipt: <a href="{{url($installment->receipt)}}" target="_blank">Download</a>
+                          Receipt:
+
+                           <a href="{{url($installments->receipt)}}" target="_blank">Download</a><br>
                           @endif
                     
                           Payment Status: {{$installments->payment_status}}<br>
@@ -195,7 +197,8 @@
     </div>
 
 
-   <div class="card">
+    <div class="col-md-12">
+         <div class="card">
       <div class="card-header">
         Attachments
       </div>
@@ -219,10 +222,12 @@
         </div>
       </div>
     </div>
+    </div>
 
 
 
-     <div class="card">
+    <div class="col-md-12">
+           <div class="card">
        <div class="card-body">
           <div class="row">
     <div class="col-md-6">
@@ -234,6 +239,7 @@
   </div>
        </div>
      </div>
+    </div>
   </div>
 
 </div>

@@ -11,8 +11,7 @@
                 <i class="material-icons">content_copy</i>
               </div>
               <p class="card-category">Total Customers</p>
-              <h3 class="card-title">49/50
-                <small>GB</small>
+              <h3 class="card-title">{{\App\User::all()->where('customer')->count()}}
               </h3>
             </div>
           </div>
@@ -26,11 +25,6 @@
               <p class="card-category">Revenue</p>
               <h3 class="card-title">$34,245</h3>
             </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">date_range</i> Last 24 Hours
-              </div>
-            </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -40,13 +34,9 @@
                 <i class="material-icons">info_outline</i>
               </div>
               <p class="card-category">Total Plots</p>
-              <h3 class="card-title">75</h3>
+              <h3 class="card-title">{{\App\Plot::all()->count()}}</h3>
             </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">local_offer</i> Tracked from Github
-              </div>
-            </div>
+
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
@@ -57,11 +47,6 @@
               </div>
               <p class="card-category">Followers</p>
               <h3 class="card-title">+245</h3>
-            </div>
-            <div class="card-footer">
-              <div class="stats">
-                <i class="material-icons">update</i> Just Updated
-              </div>
             </div>
           </div>
         </div>
