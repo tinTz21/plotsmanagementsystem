@@ -59,15 +59,18 @@
 				<div class="col-md-12">
 					<h4>Detailed Measurements</h4>
 					<div class="row">
-						<div class="col-md-4">
-							<b>Distance From Tanroads is</b>  {{$plot->tanroad_distance}}Km's.
+						<div class="col-md-3">
+							<b> Tanroads Distance is</b> {{$plot->tanroad_distance}}Km's.
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<b>TP Drawing number is:</b> {{$plot->tt_drawing}}
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<b>Survey Number is:</b> {{$plot->survey_number}}
+						</div>
+						<div class="col-md-3">
+							<b>Geo-Cordinate:</b>{{$plot->positions }}
 						</div>
 
 					</div>
@@ -93,38 +96,21 @@
 				</div>
 				</div>
 
-				&nbsp;
-				<div class="col-md-12">
-					<h4>Attachments</h4>
-					<div class="row">
-						<div class="col-md-3">
-							<b>Geo-Cordinate: </b>{{$plot->positions }}
-						</div>
-						<div class="col-md-3">
-							<b>Map</b>{{$plot->map }}
-						</div>
-						<div class="col-md-3">
-							<b>Plot Status: </b>{{$plot->status }}
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
-
-		<div card-footer>
-			<div class="row text-center border-top border-top-primary">
-				<div class="col-md-6">
+<hr>
+		<div class="card-footer">
+			
+				<div class="col-md-6 text-left">
 					Created At: {{$plot->created_at}}
 				</div>
-				<div class="col-md-6">
-					Updated At: {{$plot->updated_at}}
-				</div>
+
 			</div>
 		</div>
 	</div>
 
-	<div class="card">
+	<div class="col-md-12">
+		<div class="card">
 		<div class="card-header">
 			<h3>Attachments</h3>
 		</div>
@@ -172,6 +158,7 @@
 			</div>
 
 		</div>
+	</div>
 	</div>
 </div>
 @endsection

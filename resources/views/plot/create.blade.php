@@ -17,26 +17,40 @@
         <div class="row">
 
           
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label> Plot Number</label>
             <div class="col-xs-4">
               <input type="text" name="plot_number" class="form-control" placeholder="type...">
             </div>
           </div>
 
-          <div class="col-md-4">
-            <label> Plot Size(SQM)</label>
+          <div class="col-md-6">
+            <label> Plot Size(sqm)</label>
             <div class="col-xs-6">
               <input type="text" class="form-control" name="plot_size" placeholder="type...">
             </div>
           </div>
-
-          <div class="col-md-4">
+          
+          <div class="col-md-12">
+            &nbsp;
+            <div class="row">
+              
+          <div class="col-md-6">
             <label> Block Number</label>
             <div class="col-xs-6">
               <input type="text" class="form-control" name="block_number" placeholder="type...">
             </div>
-          </div>&nbsp;
+          </div>
+
+           <div class="col-md-6">
+              <label>Add Geo-Cordinate Number</label>
+              <div class="col-xs-12">
+                <input type="text" class="form-control" placeholder="type..." name="positions">
+              </div>
+            </div>
+            </div>
+          </div>
+          &nbsp;
 
           <div class="col-md-12">
             <label>Plot Description</label>
@@ -45,7 +59,9 @@
             </div>&nbsp;
           </div>
 
-            <div class="col-md-3">
+            <div class="col-md-12" >
+              <div class="row"> 
+                <div class="col-md-6">
               <label>Country</label>
              <div class="col-xs-12">
                <select class="mdb-select md-form" name="country" searchable="Search here..">
@@ -58,49 +74,66 @@
                 </select>
              </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6">
               <label>Region</label>
               <div class="col-xs-12">
                 <input type="text" class="form-control" placeholder="type..." name="region">
               </div>
             </div>
-            <div class="col-md-3">
+            &nbsp;
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
               <label>District</label>
               <div class="col-xs-12">
                 <input type="text" name="district" class="form-control">
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-6">
               <label>Street</label>
               <div class="col-xs-12">
                 <input type="text" name="street" class="form-control">
               </div>
               &nbsp;
             </div>
+            </div>
+              </div>
+            </div>
 
-             <div class="col-md-4">
+&nbsp;
+            </div>
+
+            <div class="col-md-12">
+              <div class="row">
+                 <div class="col-md-6">
             <label> TanRoad Distance</label>
             <div class="col-xs-4">
               <input type="text" class="form-control" name="tanroad_distance" placeholder="e.g. 10 km's or 690 meters">
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label>TP  Drawing</label>
             <div class="col-xs-6">
               <input type="text" class="form-control" name="tt_drawing" placeholder="type...">
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label>Survey Number</label>
             <div class="col-xs-6">
               <input type="text" class="form-control" name="survey_number" placeholder="type...">
             </div>
-          </div>&nbsp;
+          </div>
+              </div>
+              &nbsp;
+            </div>
 
           <div class="col-md-12">
+            &nbsp;
+            <div class="row">
+              <div class="col-md-12">
             <h5>Distance In Compass</h5>
           </div>
           <div class="col-md-3">
@@ -130,22 +163,14 @@
               &nbsp;
             </div>
 
-            <div class="col-md-4">
-              <label>Survey Attachment</label>
-              <input type="file" name="attachment" class="form-control">
             </div>
-            <div class="col-md-4">
-              <label>Add Geo-Cordinate</label>
-              <div class="col-xs-12">
-                <input type="text" class="form-control" placeholder="type..." name="positions">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <label>Map</label>
-              <div class="col-xs-12">
-                <input type="map" name="map" class="form-control">
-              </div>
-            </div>&nbsp;&nbsp;
+            &nbsp;
+          </div>
+
+
+           
+           
+
            <div class="col-md-12">
              <div class="row">
 
@@ -180,6 +205,10 @@
              </div>
 &nbsp;
            </div>
+            <div class="col-md-4">
+              <label>Survey Attachment</label>
+              <input type="file" name="attachment" class="form-control">
+            </div>
              </div>
 
             <div class="col-md-12">
