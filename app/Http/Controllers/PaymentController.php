@@ -148,7 +148,7 @@ class PaymentController extends Controller
     public function show($id)
     {
         $installments=Installment::simplePaginate(5);
-        $installment=Installment::all();
+        $installment=Installment::simplePaginate(2);
         $payments=Payment::find($id);
         return view('payments.show')->with(compact(['payments',$payments,'installment',$installment,'installments',$installments]));
     }

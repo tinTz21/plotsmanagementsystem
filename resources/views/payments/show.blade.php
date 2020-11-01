@@ -24,22 +24,23 @@
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <h5><b>Payment</b></h5>
+                        <h5><b>Payments</b></h5>
+
                       </div>
                       <div class="col-md-12">
                        <div class="row">
                           <label class="col-sm-3"><b>Agreed Price</b></label>
                         <div class="col-sm-8">
-                          {{$payments->agreed}}
+                        {{ (int)$payments['agreed']}} Tsh<br>
                         </div>
                        </div>
                       </div>
 
                       <div class="col-md-12">
                        <div class="row">
-                          <label class="col-sm-4"><b>Total Amount Paid</b></label>
+                          <label class="col-sm-3"><b>Total Amount Paid</b></label>
                         <div class="col-sm-8">
-                          {{$payments->paid}}
+                          {{App\Installment::where('payment_id',$payments->id)->sum('next_amount')}} Tsh
                         </div>
                        </div>
                       </div>
@@ -47,23 +48,14 @@
                         <div class="row">
                           <label class="col-sm-3"><b>Amount Due</b></label>
                         <div class="col-sm-9">
-                          {{ ((int)$payments['agreed'] - (int)$payments['paid'])}} Tsh
+                          {{ ((int)$payments['agreed'] - App\Installment::where('payment_id',$payments->id)->sum('next_amount'))}} Tsh
                         </div>
                         </div>
-                      </div>
-
-                       <div class="col-md-12">
-                       <div class="row">
-                          <label class="col-sm-4"><b>First Payment Issued On</b></label>
-                        <div class="col-sm-7">
-                          {{$payments->created_at}}
-                        </div>
-                       </div>
                       </div>
 
                       <div class="col-md-12">
                         <div class="row">
-                          <label class="col-sm-4"><b>Payment Status</b></label>
+                          <label class="col-sm-3"><b>Payment Status</b></label>
                         <div class="col-sm-7">
                           {{$payments->status}}
                         </div>
@@ -170,34 +162,28 @@
                           <label>NEXT PAYMENT IS AT: </label>
                        </div>
                        <div class="col-md-12">
-                          @foreach($installment as $installment)&nbsp;
+                          @foreach($installment as $installments)&nbsp;
                             <div>
-                              @if($installment->payment_id ==$payments->id)
-                          Date: {{date('d-m-Y', strtotime($installment->next_date))}}<br>
-                          Promised Amount: {{$installment->next_amount}} Tsh<br>
-                          installment Status: {{$installment->installment_status}}<br>
-                          @if($installment->receipt)
+                              @if($installments->payment_id ==$payments->id)
+                          Date: {{date('d-m-Y', strtotime($installments->next_date))}}<br>
+                          Promised Amount: {{$installments->next_amount}} Tsh<br>
+                          installment Status: {{$installments->installment_status}}<br>
+                          @if($installments->receipt)
                           Receipt: <a href="{{url($installment->receipt)}}" target="_blank">Download</a>
                           @endif
-                          <br>
-                          Payment Status: {{$installment->payment_status}}<br>
-                          Payed via {{$installment->account}}<br>
-                          <a href="{{route('installment.edit',$installment->id)}}"><i class="fa fa-edit"></i></a>
-                          <a href="{{route('installment.delete_installment',$installment->id)}}"><i class="fa fa-trash"></i></a>
+                    
+                          Payment Status: {{$installments->payment_status}}<br>
+                          Pay via {{$installments->account}}<br>
+                          <a href="{{route('installment.edit',$installments->id)}}"><i class="fa fa-edit"></i></a>
+                          <a href="{{route('installment.delete_installment',$installments->id)}}"><i class="fa fa-trash"></i></a>
                             </div>
                           &nbsp;
                          @endif
                           @endforeach
+                          {{$installment->onEachSide(2)->links()}}
                           &nbsp;
-
-                          <div class="col-md-12">
-                           
-                           @if($payments->id==App\Installment::latest()->get('payment_id'))
-                              Total Amount Paid: {{App\Installment::sum('next_amount')}}
-                             @endif
-                            
-                          </div>
-                       </div>
+                        </div>
+                      
 
                       </div>  
                     </div>
