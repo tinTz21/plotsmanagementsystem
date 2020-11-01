@@ -22,8 +22,8 @@
               <div class="card-icon">
                 <i class="material-icons">store</i>
               </div>
-              <p class="card-category">Revenue</p>
-              <h3 class="card-title">$34,245</h3>
+              <p class="card-category">Total Revenue</p>
+              <h3 class="card-title">{{App\Installment::sum('next_amount')}} Tsh</h3>
             </div>
           </div>
         </div>
