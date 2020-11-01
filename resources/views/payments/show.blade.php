@@ -24,7 +24,7 @@
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <h5><b>Payments</b></h5>
+                        <h5><b>Payments Summary</b></h5>
 
                       </div>
                       <div class="col-md-12">
@@ -68,7 +68,7 @@
 
                       <div class="col-md-12">
                        <div class="row">
-                          <label class="col-sm-3"><b>Buyer Name</b></label>
+                          <label class="col-sm-4"><b>Buyer Name</b></label>
                         <div class="col-sm-4">
                           {{$payments->user->name}}
                         </div>
@@ -86,7 +86,7 @@
 
                     <div class="col-md-12">
                         <div class="row">
-                          <label class="col-sm-5"><b>Number Of Installments</b></label>
+                          <label class="col-sm-4"><b>Number Of Installments</b></label>
                         <div class="col-sm-6">
                           {{$payments->number_of_installments}}
                         </div>
@@ -95,7 +95,7 @@
 
                   <div class="col-md-12">
                         <div class="row">
-                          <label class="col-sm-3"><b>ID Details</b></label>
+                          <label class="col-sm-4"><b>ID Details</b></label>
                         <div class="col-sm-6">
                           {{$payments->user->identification}}, #:{{$payments->user->identification_number}}
                         </div>
@@ -104,7 +104,7 @@
                         @if($payments->user->email)
                          <div class="col-md-12">
                         <div class="row">
-                          <label class="col-sm-2"><b>Email</b></label>
+                          <label class="col-sm-4"><b>Email</b></label>
                         <div class="col-sm-6">
                             {{$payments->user->email}}
                         </div>

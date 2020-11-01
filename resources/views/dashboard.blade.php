@@ -73,8 +73,7 @@
 
                         <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Quick Summary</h4>
-                  <p class="card-category">Payments</p>
+                  <h4 class="card-title">Quick Payments Summary</h4>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -82,8 +81,8 @@
                       <th>Property Name</th>
                       <th>Customer Na</th>
                       <th>Agreed Price</th>
-                      <th>Amount Paid</th>
-                      <th>Amount Due</th>
+                      <th>View Amount summary</th>
+                      
                       <th>Next Payment</th>
                     </thead>
                     <tbody>
@@ -97,8 +96,8 @@
                         <td> <a href="{{route('customer.show',$dashboards->payment->user->id)}}">{{$dashboards->payment->user->name}}</a> </td>
                         <td>{{$dashboards->payment->agreed}} Tsh</td>
                         
-                        <td>{{App\Installment::sum('next_amount')}}</td>
-                        <td></td>
+                        <td class="text-center"><a href="{{route('payments.show',$dashboards->payment->id)}}">click here <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+ <i class="fa fa-eye"></i></a></td>
                         <td>{{$dashboards->next_date}}</td>
                       </tr>
                       @endforeach
