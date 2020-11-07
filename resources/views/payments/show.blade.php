@@ -46,7 +46,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="row">
-                          <label class="col-sm-3"><b>Amount Due</b></label>
+                          <label class="col-sm-3"><b>Due Amount</b></label>
                         <div class="col-sm-9">
                           {{ ((int)$payments['agreed'] - App\Installment::where('payment_id',$payments->id)->sum('next_amount'))}} Tsh
                         </div>

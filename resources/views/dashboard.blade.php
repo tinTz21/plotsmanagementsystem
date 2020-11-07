@@ -55,7 +55,7 @@
         <div class="col-md-12">
           
 
-
+{{--
                         <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Quick Payments Summary</h4>
@@ -94,7 +94,92 @@
                {{ $dashboard->onEachSide(5)->links() }}
               </div>
         </div>
+      </div>--}}
+
+
+
+
+ <div class="row">
+        <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Quick Payments Summary</h4>
+                </div>
+                <div class="card-body table-responsive">
+                  <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Property Name
+                        </th>
+                          <th>
+                            Customer Name
+                          </th>
+                          <th>
+                            Agreed Price
+                            
+                          </th>
+
+                          <th>
+                            Amount Paid
+                          </th>
+                        
+                          <th>
+                            Due Amount
+                          </th>
+                          <th>View</th>
+                      </thead>
+                        @foreach($payments as $payment)
+
+                            <tbody>
+                              <tr>
+                                <td>
+                                  {{$payment->region}}, Plot# {{$payment->plot}} Block# {{$payment->block}}
+                                </td>
+                                <td>
+                                  {{$payment->user->name}}
+                                </td>
+                                <td>
+                                  {{$payment->agreed}}
+                                  
+                                </td>
+                                <td>
+                                  {{App\Installment::where('payment_id',$payment->id)->sum('next_amount')}} Tsh
+                                </td>
+                                <td>
+                                  {{ ((int)$payment['agreed'] - App\Installment::where('payment_id',$payment->id)->sum('next_amount'))}} Tsh
+                                </td>
+                                <td>
+                                  <a href="{{url('payments/show',$payment->id)}}"><i class="fa fa-eye"></i></a>
+                                </td>
+                              </tr>
+                            </tbody>
+                            @endforeach
+                          </table>
+                  </div>
+                </div>
+                </div>
+               {{ $payments->onEachSide(5)->links() }}
+              </div>
+        </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>
