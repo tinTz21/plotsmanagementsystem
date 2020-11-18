@@ -8,7 +8,7 @@
           <div class="card card-stats">
             <div class="card-header card-header-primary card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">content_copy</i>
+                <i class="fa fa-users"></i>
               </div>
               <p class="card-category">Total Customers</p>
               <h3 class="card-title">{{\App\User::all()->where('customer')->count()}}
@@ -20,7 +20,7 @@
           <div class="card card-stats">
             <div class="card-header card-header-success card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">store</i>
+                <i class="fa fa-money"></i>
               </div>
               <p class="card-category">Total Revenue</p>
               <h3 class="card-title">{{App\Installment::sum('next_amount')}} Tsh</h3>
@@ -31,7 +31,7 @@
           <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
               <div class="card-icon">
-                <i class="material-icons">info_outline</i>
+                <i class="fa fa-info"></i>
               </div>
               <p class="card-category">Total Plots</p>
               <h3 class="card-title">{{\App\Plot::all()->count()}}</h3>
@@ -39,7 +39,7 @@
 
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
+<!--         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-info card-header-icon">
               <div class="card-icon">
@@ -49,7 +49,7 @@
               <h3 class="card-title">+245</h3>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -135,10 +135,14 @@
                             <tbody>
                               <tr>
                                 <td>
+                                  
                                   {{$payment->region}}, Plot# {{$payment->plot}} Block# {{$payment->block}}
+                              
                                 </td>
                                 <td>
+                                 
                                   {{$payment->user->name}}
+                                
                                 </td>
                                 <td>
                                   {{$payment->agreed}}
@@ -156,12 +160,23 @@
                               </tr>
                             </tbody>
                             @endforeach
+                            <tbody>
+                              <tr>
+                                <td></td>
+                                <td><b>TOTAL</b></td>
+                                <td> <b>{{App\Payment::sum('agreed')}}</b></td>
+                                <td><b>{{App\Installment::all()->sum('next_amount')}}</b></td>
+                                <td><b>{{App\Payment::sum('agreed') - App\Installment::all()->sum('next_amount')}}</b></td>
+                              </tr>
+                            </tbody>
                           </table>
+
                   </div>
                 </div>
                 </div>
                {{ $payments->onEachSide(5)->links() }}
               </div>
+
         </div>
       </div>
 
