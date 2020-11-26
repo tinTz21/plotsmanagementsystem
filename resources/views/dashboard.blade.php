@@ -23,7 +23,7 @@
                 <i class="fa fa-money"></i>
               </div>
               <p class="card-category">Total Revenue</p>
-              <h3 class="card-title">{{App\Installment::sum('next_amount')}} Tsh</h3>
+              <h3 class="card-title">{{number_format(App\Installment::sum('next_amount'))}}/=</h3>
             </div>
           </div>
         </div>
@@ -145,14 +145,14 @@
                                 
                                 </td>
                                 <td>
-                                  {{$payment->agreed}}
+                                  {{number_format($payment->agreed)}}
                                   
                                 </td>
                                 <td>
-                                  {{App\Installment::where('payment_id',$payment->id)->sum('next_amount')}} Tsh
+                                  {{number_format(App\Installment::where('payment_id',$payment->id)->sum('next_amount'))}}
                                 </td>
                                 <td>
-                                  {{ ((int)$payment['agreed'] - App\Installment::where('payment_id',$payment->id)->sum('next_amount'))}} Tsh
+                                  {{ number_format(((int)$payment['agreed'] - App\Installment::where('payment_id',$payment->id)->sum('next_amount')))}}
                                 </td>
                                 <td>
                                   <a href="{{url('payments/show',$payment->id)}}"><i class="fa fa-eye"></i></a>
@@ -164,9 +164,9 @@
                               <tr>
                                 <td></td>
                                 <td><b>TOTAL</b></td>
-                                <td> <b>{{App\Payment::sum('agreed')}}</b></td>
-                                <td><b>{{App\Installment::all()->sum('next_amount')}}</b></td>
-                                <td><b>{{App\Payment::sum('agreed') - App\Installment::all()->sum('next_amount')}}</b></td>
+                                <td> <b>{{number_format(App\Payment::sum('agreed'))}}/=</b></td>
+                                <td><b>{{number_format(App\Installment::all()->sum('next_amount'))}}/=</b></td>
+                                <td><b>{{number_format(App\Payment::sum('agreed') - App\Installment::all()->sum('next_amount'))}}/=</b></td>
                               </tr>
                             </tbody>
                           </table>

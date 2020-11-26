@@ -31,7 +31,7 @@
                        <div class="row">
                           <label class="col-sm-3"><b>Agreed Price</b></label>
                         <div class="col-sm-8">
-                        {{ (int)$payments['agreed']}} Tsh<br>
+                        {{ number_format((int)$payments['agreed'])}}/=<br>
                         </div>
                        </div>
                       </div>
@@ -40,7 +40,7 @@
                        <div class="row">
                           <label class="col-sm-3"><b>Total Amount Paid</b></label>
                         <div class="col-sm-8">
-                          {{App\Installment::where('payment_id',$payments->id)->sum('next_amount')}} Tsh
+                          {{number_format(App\Installment::where('payment_id',$payments->id)->sum('next_amount'))}}/=
                         </div>
                        </div>
                       </div>
@@ -48,7 +48,7 @@
                         <div class="row">
                           <label class="col-sm-3"><b>Due Amount</b></label>
                         <div class="col-sm-9">
-                          {{ ((int)$payments['agreed'] - App\Installment::where('payment_id',$payments->id)->sum('next_amount'))}} Tsh
+                          {{ number_format(((int)$payments['agreed'] - App\Installment::where('payment_id',$payments->id)->sum('next_amount')))}}/=
                         </div>
                         </div>
                       </div>
@@ -166,7 +166,7 @@
                             <div>
                               @if($installments->payment_id ==$payments->id)
                           Date: {{date('d-m-Y', strtotime($installments->next_date))}}<br>
-                          Promised Amount: {{$installments->next_amount}} Tsh<br>
+                          Promised Amount: {{number_format($installments->next_amount)}}/=<br>
                           installment Status: {{$installments->installment_status}}<br>
                           @if($installments->receipt)
                           Receipt:

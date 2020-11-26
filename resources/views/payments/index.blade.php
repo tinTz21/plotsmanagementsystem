@@ -37,7 +37,7 @@
                                   {{$payments->region}}, {{$payments->district}}, {{$payments->street}}
                                 </td>
                                 <td>
-                                  {{$payments->agreed}}
+                                  {{number_format($payments->agreed)}}/=
                                 </td>
                                 <td>
                                   <a href="{{url('payments/show',$payments->id)}}"><i class="fa fa-eye"></i></a>
