@@ -136,8 +136,8 @@
                               <tr>
                                 <td>
                                   
-                                  {{$payment->region}}, Plot# {{$payment->plot}} Block# {{$payment->block}}
-                              
+                                  {{$payment->district}} - {{$payment->street}}, Plot# {{$payment->plot}} 
+                               
                                 </td>
                                 <td>
                                  

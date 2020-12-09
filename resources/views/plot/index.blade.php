@@ -92,13 +92,16 @@
 		    		{{$plots->description}}
 		    		</div>
 		    		<div class="card-footer border-top border-info">
-		    			<div class="row">
-		    				<div class="col-md-6">
-		    					Created At: {{$plots->created_at}}
+		    			<div class="col-md-12">
+		    				<div class="row">
+		    				<div class="col-md-8">
+		    					Created At: {{date('d-m-Y', strtotime($plots->created_at))}} 
+
 		    				</div>
-		    				<div class="col-md-6 ">
-		    					Block Number:{{$plots->block_number}}
+		    				<div class="col-md-4">
+		    					<p>Block #:{{$plots->block_number}}</p>
 		    				</div>
+		    			</div>
 		    			</div>
 		    		</div>
 		    		</a>

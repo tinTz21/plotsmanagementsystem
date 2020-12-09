@@ -2,7 +2,7 @@
 
     @section('content')
       <div class="content"> 
-      		<small>Your customer</small> <b>{{$reminder->payment->user->name}} </b>, <small>will pay {{number_format($reminder->next_amount)}}/=</small> <small> at </small><b>{{$reminder->next_date}}</b>
+      		<small>Your customer</small> <b>{{$reminder->payment->user->name}} </b>, <small>will pay {{number_format($reminder->next_amount)}}/=</small> <small> at </small><b>{{date('d-m-Y', strtotime($reminder->next_date))}}</b>
       		
 
       			

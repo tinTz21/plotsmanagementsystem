@@ -102,7 +102,7 @@
 		<div class="card-footer">
 			
 				<div class="col-md-6 text-left">
-					Created At: {{$plot->created_at}}
+					Created At: {{date('d-m-Y', strtotime($plot->created_at))}} 
 				</div>
 
 			</div>

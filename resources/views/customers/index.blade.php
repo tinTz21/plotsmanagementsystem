@@ -59,7 +59,7 @@
                                   {{$customers->email}}
                                 </td>
                                 <td>
-                                  {{$customers->created_at}}
+                                  {{date('d-m-Y', strtotime($customers->created_at))}} 
                                 </td>
                                 <td>
                                   <a href="{{url('customer/show',$customers->id)}}"><i class="fa fa-eye fa-1x"></i></a>
