@@ -42,73 +42,81 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-                $user=new User;
-                $user->name=$request->get('name');
-                $user->email=$request->get('email');
-                $user->customer=$request->get('customer');
-                $user->country = $request->get('country');
-                $user->region =$request->get('region');
-                $user->district =$request->get('district');
-                $user->phone =$request->get('phone');
-                $user->identification = $request->get('identification');
-                $user->identification_number = $request->get('identification_number');
-                $user->save();
+        $user=new User;
+        $user->name=$request->get('name');
+        if($request->get('email')==''){
+        $token = $request->_token; 
+        $default =$token."@mylands.co.tz"; 
+        $user->email = $default;
+        }
+        else
+
+        $user->email=$request->get('email');
+        $user->phone=$request->get('phone');
+        $user->customer=$request->get('customer');
+        $user->country = $request->get('country');
+        $user->region =$request->get('region');
+        $user->district =$request->get('district');
+        $user->phone =$request->get('phone');
+        $user->identification = $request->get('identification');
+        $user->identification_number = $request->get('identification_number');
+        $user->save();
 
 
-                $customer=new Payment;
-                $customer->status = $request->get('status');
-                $customer->date=$request->get('date');
-                $customer->method = $request->get('method');
-                $customer->number_of_installments = $request->get('number_of_installments');
-                $customer->cash=$request->get('cash'); 
-                $customer->unpayed = $request->get('unpayed');
-                $customer->size = $request->get('size'); 
-                $customer->plot = $request->get('plot');
-                $customer->block =$request->get('block');
-                $customer->geo =$request->get('geo');
-                $customer->tp =$request->get('tp');
-                $customer->country =$request->get('country');
-                $customer->region =$request->get('region');
-                $customer->district =$request->get('district');
-                $customer->street =$request->get('street');
-                $customer->customer=$request->get('customer'); 
-                $customer->agreed = $request->get('agreed');
-                $customer->user_id = $user->id;
-                $customer->plot_id=$request->get('plot_id');
-                $file = $request->file('agreement_attachment');
-                if ($file) {
-                    $path = 'files/';
-                    $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
-                    $upload = $request->file('agreement_attachment')->move($path, $filename);
-                    if ($upload) {
-                        $customer->agreement_attachment = $path . $filename;
-                    }
-                }     
-                $customer->save();
-  
+        $customer=new Payment;
+        $customer->status = $request->get('status');
+        $customer->date=$request->get('date');
+        $customer->method = $request->get('method');
+        $customer->number_of_installments = $request->get('number_of_installments');
+        $customer->cash=$request->get('cash'); 
+        $customer->unpayed = $request->get('unpayed');
+        $customer->size = $request->get('size'); 
+        $customer->plot = $request->get('plot');
+        $customer->block =$request->get('block');
+        $customer->geo =$request->get('geo');
+        $customer->tp =$request->get('tp');
+        $customer->country =$request->get('country');
+        $customer->region =$request->get('region');
+        $customer->district =$request->get('district');
+        $customer->street =$request->get('street');
+        $customer->customer=$request->get('customer'); 
+        $customer->agreed = $request->get('agreed');
+        $customer->user_id = $user->id;
+        $customer->plot_id=$request->get('plot_id');
+        $file = $request->file('agreement_attachment');
+        if ($file) {
+            $path = 'files/';
+            $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+            $upload = $request->file('agreement_attachment')->move($path, $filename);
+            if ($upload) {
+                $customer->agreement_attachment = $path . $filename;
+            }
+        }     
+        $customer->save();
 
-                $payment=new Installment();
-                $payment->plot_id=$request->get('plot_id');
-                $payment->user_id = $user->id;
-                $payment->payment_id=$customer->id;
-                $payment->next_date=$request->get('next_date');
-                $payment->next_amount=$request->get('next_amount');
-                $payment->payment_status=$request->get('payment_status');
-                $payment->account=$request->get('account');
 
-                $file = $request->file('receipt');
-                    if ($file) {
-                        $path = 'files/';
-                        $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
-                        $upload = $request->file('receipt')->move($path, $filename);
-                        if ($upload) {
-                            $payment->receipt = $path . $filename;
-                        }
-                    } 
-                $payment->save();
-       
-            
-            return redirect()->route('payments.index')->withStatus(__('customer successfully updated.'));
+        $payment=new Installment();
+        $payment->plot_id=$request->get('plot_id');
+        $payment->user_id = $user->id;
+        $payment->payment_id=$customer->id;
+        $payment->next_date=$request->get('next_date');
+        $payment->next_amount=$request->get('next_amount');
+        $payment->payment_status=$request->get('payment_status');
+        $payment->account=$request->get('account');
+
+        $file = $request->file('receipt');
+            if ($file) {
+                $path = 'files/';
+                $filename = uniqid(date('Hmdysi')) . '_' . $file->getClientOriginalName();
+                $upload = $request->file('receipt')->move($path, $filename);
+                if ($upload) {
+                    $payment->receipt = $path . $filename;
+                }
+            } 
+        $payment->save();
+
+    
+    return redirect()->route('payments.index')->withStatus(__('customer successfully updated.'));
     }
 
 

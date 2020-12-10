@@ -54,6 +54,11 @@
            <input type="text" name="country" class="form-control" placeholder="Enter Customer Country">
           </div>
 
+           <div class="col-md-6">
+            <label>Phone</label>
+           <input type="number" name="phone" class="form-control" placeholder="Enter Customer Phone Number">
+          </div>
+
           <div class="col-md-6">
             <label>Size Bought</label>
             <input type="text" name="size" class="form-control" placeholder="add size...">
