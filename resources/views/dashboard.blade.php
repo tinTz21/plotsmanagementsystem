@@ -22,8 +22,10 @@
               <div class="card-icon">
                 <i class="fa fa-money"></i>
               </div>
-              <p class="card-category">Total Revenue</p>
+              <div>
+                <p class="card-category">Total Revenue</p>
               <h3 class="card-title">{{number_format(App\Installment::sum('next_amount'))}}/=</h3>
+              </div>
             </div>
           </div>
         </div>
