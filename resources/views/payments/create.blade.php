@@ -108,13 +108,13 @@
         		<div class="col-md-6">
         			<label>Agreed Price</label>
         			<div class="col-xs-6">
-        				<input type="text" name="agreed" class="form-control" placeholder="e.g. 100,000/T=sh">
+        				<input type="number" name="agreed" class="form-control" placeholder="e.g. 100,000/T=sh">
         			</div>
         		</div>
         		<div class="col-md-6">
         			<label>Amount Paid</label>
         			<div class="col-xs-6">
-        				<input type="text" name="next_amount" class="form-control" placeholder="e.g. 100,000/=Tsh">
+        				<input type="number" name="next_amount" class="form-control" placeholder="e.g. 100,000/=Tsh">
         			</div>
         		</div>
         	</div>
@@ -144,7 +144,7 @@
 
      		 <div class="col-md-6">
             <label>Add Number Of Installments</label>
-            <input type="text" name="number_of_installments" class="form-control" placeholder="e.g. 3">
+            <input type="number" name="number_of_installments" class="form-control" placeholder="e.g. 3">
           </div>
 
 
