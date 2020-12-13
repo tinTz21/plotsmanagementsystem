@@ -148,7 +148,7 @@
                                 </td>
                                 <td>
                                   
-                                  {{number_format($payment->agreed)}}
+                                  {{$payment->agreed}}
                                   
                                 </td>
                                 <td>
