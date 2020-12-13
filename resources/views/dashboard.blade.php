@@ -148,7 +148,7 @@
                                 </td>
                                 <td>
                                   
-                                  {{$payment->agreed}}
+                                  
                                   
                                 </td>
                                 <td>
