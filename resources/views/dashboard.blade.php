@@ -147,7 +147,11 @@
                                 
                                 </td>
                                 <td>
+                                  @if(number_format($payment->agreed))
                                   {{number_format($payment->agreed)}}
+                                  @else
+                                    {{$payment->agreed}}
+                                  @endif
                                   
                                 </td>
                                 <td>
