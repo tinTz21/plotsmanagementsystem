@@ -82,16 +82,16 @@
 					<h4>Plot Measures in Compass</h4>
 				<div class="row">
 					<div class="col-md-3">
-						<b>North: </b>{{$plot->north_width}}Km's
+						<b>North: </b>{{$plot->north_width}} Metres
 					</div>
 					<div class="col-md-3">
-						<b>West:</b> {{$plot->west_width}}Km's
+						<b>West:</b> {{$plot->west_width}} Metres
 					</div>
 					<div class="col-md-3">
-						<b>South:</b> {{$plot->south_width}}Km's
+						<b>South:</b> {{$plot->south_width}} Metres
 					</div>
 					<div class="col-md-3">
-						<b>East:</b> {{$plot->east_width}}Km's
+						<b>East:</b> {{$plot->east_width}} Metres
 					</div>
 				</div>
 				</div>

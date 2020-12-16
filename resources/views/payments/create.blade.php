@@ -51,12 +51,12 @@
             <div class="row">
                <div class="col-md-6">
             <label>Country</label>
-           <input type="text" name="country" class="form-control" placeholder="Enter Customer Country">
+           <input type="text" name="country" class="form-control" value="Tanzania" placeholder="Enter Customer Country">
           </div>
 
            <div class="col-md-6">
             <label>Phone</label>
-           <input type="number" name="phone" class="form-control" placeholder="Enter Customer Phone Number">
+           <input type="text" name="phone" class="form-control" placeholder="Enter Customer Phone Number">
           </div>
 
           <div class="col-md-6">
@@ -108,6 +108,7 @@
         		<div class="col-md-6">
         			<label>Agreed Price</label>
         			<div class="col-xs-6">
+
         				<input type="number" name="agreed" class="form-control" placeholder="e.g. 100,000/T=sh">
         			</div>
         		</div>
