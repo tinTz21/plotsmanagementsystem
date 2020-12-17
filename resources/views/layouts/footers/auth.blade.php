@@ -1,4 +1,4 @@
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container-fluid">
     <nav class="float-left">
       <ul>
@@ -28,4 +28,4 @@
       <a href="#" target="_blank">Augustino</a>for a better web.
     </div>
   </div>
-</footer>
+</footer> -->

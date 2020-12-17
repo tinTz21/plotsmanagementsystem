@@ -107,9 +107,9 @@
         	<div class="row">
         		<div class="col-md-6">
         			<label>Agreed Price</label>
-        			<div class="col-xs-6">
+        			<div class="col-xs-6 numbers">
 
-        				<input type="number" name="agreed" class="form-control" placeholder="e.g. 100,000/T=sh">
+        				<input id="money" type="number" name="agreed" class="form-control numbers" placeholder="e.g. 100,000/T=sh">
         			</div>
         		</div>
         		<div class="col-md-6">
@@ -187,4 +187,15 @@
 		</div>
 	</div>
 </div>
+<script>
+        function formatNumberCapture () {
+$('#money').on('keyup', function () {
+    $(this).val(function(index, value) {
+        return value
+            .replace(/\D/g, "")
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            ;
+    });
+});
+        </script>
 @endsection
